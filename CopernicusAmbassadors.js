@@ -2675,7 +2675,7 @@
     {
         "Name": "Giovanni Serritella",
         "Address": "Ancona, Italy",
-        "Coordinates": "43.65775, 13.507277",
+        "Coordinates": "43.569333, 13.546090",
         "Contact": "Giovanni Serritella",
         "Email": "giovanni.serritella@eucopernicus.net",
         "Link": "https://www.linkedin.com/in/giovanni-serritella-a95323166/"
@@ -2691,3 +2691,4 @@
     ];
 
     exports =CopAmbs;
+
