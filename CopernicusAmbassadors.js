@@ -2001,7 +2001,7 @@
         "Link": "https://www.disat.unimib.it/en/department"
     },
     {
-        "Name": "Universita degli Studi di Padova - Centre of Studies and Activities for Space CISAS â€œG.Colomboâ€",
+        "Name": "Universita degli Studi di Padova - Centre of Studies and Activities for Space CISAS  G.Colombo ",
         "Address": "Via Venezia 15, 35131 Padova, Italy",
         "Coordinates": "45.403333, 11.873056",
         "Contact": "Carlo Bettanini",
@@ -2545,7 +2545,7 @@
         "Link": "https://www.us.es/"
     },
     {
-        "Name": "University of Huelva - Research group \"Integrated management of agricultural and natural resourcesâ€",
+        "Name": "University of Huelva - Research group \"Integrated management of agricultural and natural resources ",
         "Address": "Facultad de Ciencias Experimentales .Campus Universitario El carmen, 21007 Huelva, Spain",
         "Coordinates": "37.263333, -6.933056",
         "Contact": "Eduardo Moreno Cuesta",
@@ -2577,7 +2577,7 @@
         "Link": "https://suptech.tn/suptech_university/"
     },
     {
-        "Name": "National Center â€œJunior Academy of Sciences of Ukraineâ€ (JAS of Ukraine)",
+        "Name": "National Center  Junior Academy of Sciences of Ukraine  (JAS of Ukraine)",
         "Address": "vul. Degtyarivska, 38/44 - 04119, Kyiv, Ukraine",
         "Coordinates": "50.463663198443044, 30.46096559485479",
         "Contact": "Svitlana Babiichuk",
@@ -2691,4 +2691,5 @@
     ];
 
     exports =CopAmbs;
+
 
