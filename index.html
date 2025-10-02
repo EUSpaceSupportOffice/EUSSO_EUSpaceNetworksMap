@@ -20,49 +20,68 @@
         margin: auto;
         margin-top: 20px;
       }
-      .filter-container {
-      position: absolute;
-      width: 200px;
-      bottom: 25px;
-      left: 10px;
-      background-color: white;
-      padding: 10px; /* Increase padding for better spacing */
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-      z-index: 1000;
+
+      .filter-container{
+        position:absolute;
+        bottom:25px; left:10px;
+        background:#fff;
+        padding:12px 14px;
+        box-shadow:0 0 15px rgba(0,0,0,.2);
+        border-radius:8px;
+        z-index:1000;
       }
 
-      .checkbox-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: left;
-      margin-top: 5px;
+      .filters{
+        display:grid;
+        grid-template-columns: repeat(3, minmax(180px, 1fr));
+        gap:10px 16px;
       }
 
-      .filter-container label {
-      display: flex;
-      align-items: center;
+      .chk{
+        display:flex;
+        align-items:center;
+        gap:8px;
+        font-family:sans-serif;
+        font-size:13px;
+        color:#333;
+      }
+      .chk input{ margin:0; }
+
+      .legend-card{
+        background:#fff;
+        padding:12px 14px;
+        box-shadow:0 0 15px rgba(0,0,0,.2);
+        border-radius:8px;
+        font-family:sans-serif;
+        font-size:13px;
+        color:#333;
+        line-height:1.4;
+      }
+      .legend-card img{
+        vertical-align:middle;
+        margin-right:8px;
       }
 
-      .filter-container input {
-      margin-right: 5px;
+      .legend-row{
+        display:flex;
+        align-items:center;
+        gap:8px;
+        margin:2px 0;
       }
-      .legend {
-        padding: 8px;
-        background: white;
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-        border-radius: 5px;
-        margin: 20px;
-        z-index: 999;
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        width: 200px;
+
+      .legend-icon{
+        width:18px;
+        height:18px;
+        display:inline-block;
+        flex:0 0 18px;
+        background-size:contain;      /* scale to fit box */
+        background-repeat:no-repeat;
+        background-position:center;
       }
-      label {
-        font-family: sans-serif;
-        font-size: 13px;
-        color: #333;
-       margin-right: 5px;
+
+      /* Optional: stack filters on small screens */
+      @media (max-width: 700px){
+        .filters{ grid-template-columns:1fr; }
       }
     </style>
   </head>
@@ -70,13 +89,23 @@
   <body>
       <div id="map">
         <div class="filter-container">
-          <label><strong>Show:</strong></label>
-          <div class="checkbox-row">
-            <label for="CopAmbsCheckbox">Copernicus Ambassadors</label>
-            <input type="checkbox" id="CopAmbsCheckbox" checked>
+          <div class="filters">
+            <label class="chk">
+              <input type="checkbox" id="CopAmbsCheckbox" checked>
+              Copernicus Ambassadors
+            </label>
 
-          </div>      
-        </div>        
+            <label class="chk">
+              <input type="checkbox" id="GalAmbsCheckbox" checked>
+              Galileo/EGNOS Ambassadors
+            </label>
+
+            <label class="chk">
+              <input type="checkbox" id="STMAmbsCheckbox" checked>
+              SSA/STM Ambassadors
+            </label>
+          </div>
+        </div>       
       </div>
       
   
@@ -87,8 +116,8 @@
 
 <!-- import relays variable from external javascript file -->
 <script src="CopernicusAmbassadors.js"></script>
-
-
+<script src="GalileoAmbassadors.js"></script>
+<script src="STMAmbassadors.js"></script>
 
 <script> 
   //Map initialization
@@ -105,23 +134,23 @@
   //MARKERS
   //Icon style
   const myIcon_Orange = L.icon({
-    iconUrl: 'https://www.pngall.com/wp-content/uploads/2017/05/Map-Marker-Free-Download-PNG.png',
+    iconUrl: 'Orange.svg',
     iconSize: [25,25],
     });
 
   const myIcon_Red= L.icon({
-    iconUrl: 'https://www.pngall.com/wp-content/uploads/2017/05/Map-Marker-PNG-Picture.png',
-    iconSize: [30,30],
+    iconUrl: 'Red.svg',
+    iconSize: [25,25],
     });
 
-  const myIcon_Academy =L.icon({
-      iconUrl: 'Academy.svg',
+  const myIcon_Purple =L.icon({
+      iconUrl: 'Purple.svg',
       iconSize: [25,25], 
 
     });
 
-    const myIcon_Black = L.icon({
-    iconUrl: 'https://www.pngall.com/wp-content/uploads/2017/05/Map-Marker-PNG-Clipart.png', // Adjust the URL if needed
+    const myIcon_Blue = L.icon({
+    iconUrl: 'Blue.svg', // Adjust the URL if needed
     iconSize: [25,25], // Adjust width and height as required
     });
 
@@ -139,17 +168,17 @@ function updateMarkerSize() {
         Math.min(newSize[1], maxSize[1])
     ];
 
-    myIcon_Academy.options.iconSize = newSize;
+    myIcon_Purple.options.iconSize = newSize;
     myIcon_Orange.options.iconSize = newSize;
     myIcon_Red.options.iconSize = newSize;
 
     // Refresh markers to apply changes
     map.eachLayer(function (layer) {
         if (layer instanceof L.Marker) {
-            // Check if the marker's icon is myIcon_Academy
-            if (layer.options.icon.options.iconUrl === myIcon_Academy.options.iconUrl) {
+            // Check if the marker's icon is myIcon_Purple
+            if (layer.options.icon.options.iconUrl === myIcon_Purple.options.iconUrl) {
                 layer.setIcon(L.icon({
-                    iconUrl: myIcon_Academy.options.iconUrl,
+                    iconUrl: myIcon_Purple.options.iconUrl,
                     iconSize: newSize,
                 }));
             }
@@ -163,8 +192,8 @@ function updateMarkerSize() {
                     iconSize: newSize,
                 }));
             }
-            if (layer.options.icon.options.iconUrl === myIcon_Black.options.iconUrl) {layer.setIcon(L.icon({
-                    iconUrl: myIcon_Black.options.iconUrl,
+            if (layer.options.icon.options.iconUrl === myIcon_Blue.options.iconUrl) {layer.setIcon(L.icon({
+                    iconUrl: myIcon_Blue.options.iconUrl,
                     iconSize: newSize,
                 }));
             }             
@@ -198,19 +227,83 @@ for (let i = 0; i < CopAmbs.length; i++) {
   }
 };
 
+//Loop through the GALILEO AMBASSADORS and add markers to the cluster group
+for (let i = 0; i < GalAmbs.length; i++) {
+  const galAmb = GalAmbs[i];
+  const coordinates = galAmb.Coordinates.split(',').map(coord => parseFloat(coord.trim()));
 
+  if (!isNaN(coordinates[0]) && !isNaN(coordinates[1])) {
+    let popupContentGalAmbs;
+    
+    //Build popup content 
+    popupContentGalAmbs = `
+    <strong>${galAmb.Name}</strong><br>
+      Primary contact: ${galAmb.Contact}<br>
+      Email: <a href="mailto:${galAmb.Email}">${galAmb.Email}</a><br>`;
 
-//Legend
-const legend = L.control({position: 'topright'});
+    //Add link only if academy.Link has a value
+    if (galAmb.Link) {
+      popupContentGalAmbs += ` <a href="${galAmb.Link}" target="_blank">More info</a>`;
+    }
 
-legend.onAdd = function (map) {
-  const div = L.DomUtil.create('div', 'info legend');
-  div.innerHTML += '<img src="https://www.pngall.com/wp-content/uploads/2017/05/Map-Marker-PNG-Picture.png" style="width: 20px; height: 20px;"> EU Space Support Office<br>';
-//  div.innerHTML += '<img src="Academy.svg" style="width: 20px; height: 20px;"> Copernicus Academy Members<br>';
-  div.innerHTML += '<img src="https://www.pngall.com/wp-content/uploads/2017/05/Map-Marker-Free-Download-PNG.png" style="width: 20px; height: 20px;"> Copernicus Ambassadors<br>';
-  return div;
+    const marker = L.marker(coordinates, { icon: myIcon_Blue, iconSize: [10, 50]});
+    marker.bindPopup(popupContentGalAmbs);
+    marker.addTo(map);
+  }
 };
 
+//Loop through the STM AMBASSADORS and add markers to the cluster group
+for (let i = 0; i < STMAmbs.length; i++) {
+  const stmAmb = STMAmbs[i];
+  const coordinates = stmAmb.Coordinates.split(',').map(coord => parseFloat(coord.trim()));
+
+  if (!isNaN(coordinates[0]) && !isNaN(coordinates[1])) {
+    let popupContentSTMAmbs;
+    
+    //Build popup content 
+    popupContentSTMAmbs = `
+    <strong>${stmAmb.Name}</strong><br>
+      Primary contact: ${stmAmb.Contact}<br>
+      Email: <a href="mailto:${stmAmb.Email}">${stmAmb.Email}</a><br>`;
+
+    //Add link only if academy.Link has a value
+    if (stmAmb.Link) {
+      popupContentSTMAmbs += ` <a href="${stmAmb.Link}" target="_blank">More info</a>`;
+    }
+
+    const marker = L.marker(coordinates, { icon: myIcon_Purple, iconSize: [10, 50]});
+    marker.bindPopup(popupContentSTMAmbs);
+    marker.addTo(map);
+  }
+};
+
+//Legend
+
+const legend = L.control({ position: 'topright' });
+legend.onAdd = function (map) {
+  const div = L.DomUtil.create('div', 'legend-card');
+
+  div.innerHTML += `
+    <div class="legend-row">
+      <span class="legend-icon" style="background-image:url('Red.svg');"></span>
+      EU Space Support Office
+    </div>
+    <div class="legend-row">
+      <span class="legend-icon" style="background-image:url('Orange.svg');"></span>
+      Copernicus Ambassadors
+    </div>
+    <div class="legend-row">
+      <span class="legend-icon" style="background-image:url('Blue.svg');"></span>
+      Galileo/EGNOS Ambassadors
+    </div>
+    <div class="legend-row">
+      <span class="legend-icon" style="background-image:url('Purple.svg');"></span>
+      SSA/STM Ambassadors
+    </div>
+  `;
+
+  return div;
+};
 legend.addTo(map);
 
 
@@ -229,6 +322,11 @@ const brusselsMarker = L.marker(brusselsCoordinates, {icon: myIcon_Red}).bindPop
 const CopAmbsCheckbox = document.getElementById('CopAmbsCheckbox');
 CopAmbsCheckbox.addEventListener('change', updateMarkers);
 
+const GalAmbsCheckbox = document.getElementById('GalAmbsCheckbox');
+GalAmbsCheckbox.addEventListener('change', updateMarkers);
+
+const STMAmbsCheckbox = document.getElementById('STMAmbsCheckbox');
+STMAmbsCheckbox.addEventListener('change', updateMarkers);
 
 function updateMarkers() {
   map.eachLayer(function (layer) {
@@ -255,6 +353,52 @@ function updateMarkers() {
         
     const marker = L.marker(coordinates, { icon: myIcon_Orange });
     marker.bindPopup(popupContentCopAmbs);
+    marker.addTo(map);
+    }
+      }
+    }
+
+  // Add galAmb markers if the checkbox is checked
+  if (GalAmbsCheckbox.checked) {
+    for (let i = 0; i < GalAmbs.length; i++) {
+      const galAmb = GalAmbs[i];
+      const coordinates = galAmb.Coordinates.split(',').map(coord => parseFloat(coord.trim()));
+
+      if (!isNaN(coordinates[0]) && !isNaN(coordinates[1])) {
+        let popupContentGalAmbs = `
+        <strong>${galAmb.Name}</strong><br>
+        Primary contact: ${galAmb.Contact}<br>
+        Email: <a href="mailto:${galAmb.Email}">${galAmb.Email}</a><br>`;
+      //Add link only if academy.Link has a value
+      if (galAmb.Link) {
+          popupContentGalAmbs += ` <a href="${galAmb.Link}" target="_blank">More info</a>`;
+        }
+        
+    const marker = L.marker(coordinates, { icon: myIcon_Blue });
+    marker.bindPopup(popupContentGalAmbs);
+    marker.addTo(map);
+    }
+      }
+    }
+
+  // Add stmAmb markers if the checkbox is checked
+  if (STMAmbsCheckbox.checked) {
+    for (let i = 0; i < STMAmbs.length; i++) {
+      const stmAmb = STMAmbs[i];
+      const coordinates = stmAmb.Coordinates.split(',').map(coord => parseFloat(coord.trim()));
+
+      if (!isNaN(coordinates[0]) && !isNaN(coordinates[1])) {
+        let popupContentSTMAmbs = `
+        <strong>${stmAmb.Name}</strong><br>
+        Primary contact: ${stmAmb.Contact}<br>
+        Email: <a href="mailto:${stmAmb.Email}">${stmAmb.Email}</a><br>`;
+      //Add link only if academy.Link has a value
+      if (stmAmb.Link) {
+          popupContentSTMAmbs += ` <a href="${stmAmb.Link}" target="_blank">More info</a>`;
+        }
+        
+    const marker = L.marker(coordinates, { icon: myIcon_Purple });
+    marker.bindPopup(popupContentSTMAmbs);
     marker.addTo(map);
     }
       }
