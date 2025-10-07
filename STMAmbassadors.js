@@ -1,8 +1,8 @@
   const STMAmbs = [
     {
       "Name": "Arribes Enlightment",
-      "Address": "Calle Pablo Picasso, 19 28691 Villanueva de la Cañada, Spain",
-      "Coordinates": "40.440986594732976, -4.003329917761644",
+      "Address": "Parque Científico de Madrid, Faraday 7 28049 - Madrid, Spain",
+      "Coordinates": "440.549214751177544, -3.6891787905011637",
       "Contact": "Noelia Sanchez Ortiz",
       "Email": "NOSO@ARRIB.ES",
       "Link": "https://arrib.es/"
@@ -18,4 +18,5 @@
     ];
 
     exports =STMAmbs;
+
 
