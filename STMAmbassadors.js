@@ -2,7 +2,7 @@
     {
       "Name": "Arribes Enlightment",
       "Address": "Parque Científico de Madrid, Faraday 7 28049 - Madrid, Spain",
-      "Coordinates": "440.549214751177544, -3.6891787905011637",
+      "Coordinates": "40.549214751177544, -3.6891787905011637",
       "Contact": "Noelia Sanchez Ortiz",
       "Email": "NOSO@ARRIB.ES",
       "Link": "https://arrib.es/"
@@ -26,6 +26,7 @@
     ];
 
     exports =STMAmbs;
+
 
 
 
