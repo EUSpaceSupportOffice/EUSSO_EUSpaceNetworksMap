@@ -8,8 +8,16 @@
       "Link": "https://arrib.es/"
     },
     {
+      "Name": "Arcsec NV",
+      "Address": "Sint-Pietersstraat 5 8520 Kuurne, Belgium",
+      "Coordinates": "50.862019310570005, 3.2680308399384828",
+      "Contact": "Tjorven Delanie",
+      "Email": "tjorven@arcsecspace.com",
+      "Link": "https://www.arcsec.space/"
+    },
+    {
       "Name": "Skypuzzler Aps",
-      "Address": "Ostergade 16, 4 DK-1100 Copernhagen, Denmark",
+      "Address": "Ostergade 16, 4 DK-1100 Copenhagen, Denmark",
       "Coordinates": "55.68017556924395, 12.58382939784428",
       "Contact": "Elgiz Baskaya",
       "Email": "elgiz.baskaya@skypuzzler.com",
@@ -18,5 +26,6 @@
     ];
 
     exports =STMAmbs;
+
 
 
