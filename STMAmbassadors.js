@@ -16,6 +16,14 @@
       "Link": "https://www.arcsec.space/"
     },
     {
+      "Name": "GMV Innovating Solutions",
+      "Address": "Calle de Isaac Newton (P I Tres Cantos) 11, 28760, Tres Cantos (Madrid), Spain",
+      "Coordinates": "40.591439667256644, -3.706654489344477",
+      "Contact": "María Antonia Ramos Prada ",
+      "Email": "marian.ramos@gmv.com",
+      "Link": "https://www.gmv.com/en-es"
+    },
+    {
       "Name": "Skypuzzler Aps",
       "Address": "Ostergade 16, 4 DK-1100 Copenhagen, Denmark",
       "Coordinates": "55.68017556924395, 12.58382939784428",
@@ -26,6 +34,7 @@
     ];
 
     exports =STMAmbs;
+
 
 
 
