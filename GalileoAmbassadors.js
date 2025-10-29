@@ -30,8 +30,17 @@
       "Contact": "Thomas Hobiger",
       "Email": "thomas.hobiger@ins.uni-stuttgart.de",
       "Link": "https://www.ins.uni-stuttgart.de/en/"
+    },
+    {
+      "Name": "Group of Astronomy and Geomatics (gAGE) Polytechnic University of Catalonia (UPC)",
+      "Address": "Carrer de Jordi Girona, 1-3 08034 Barcelona, Spain",
+      "Coordinates": "41.388403871941094, 2.1125203578448812",
+      "Contact": "Cristhian Timote",
+      "Email": "cristhian.timote@upc.edu",
+      "Link": "https://www.upc.edu/ca"
     }
     ];
 
     exports =GalAmbs;
+
 
