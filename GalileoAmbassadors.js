@@ -1,5 +1,13 @@
   const GalAmbs = [
     {
+      "Name": "Politecnico di Torino",
+      "Address": "corso Duca delgi Abruzzi 24\n10129 Torino\n Italy",
+      "Coordinates": "45.06265148688358, 7.662366724417089",
+      "Contact": "Pr. Fabio Dovis",
+      "Email": "fabio.dovis@polito.it",
+      "Link": "http://www.polito.it"
+    },
+    {
       "Name": "University of Michigan Space Institute",
       "Address": "2455 Hayward St, 48109 Hayward St, United States",
       "Coordinates": "42.29448036809762, -83.71150387393469",
@@ -42,5 +50,6 @@
     ];
 
     exports =GalAmbs;
+
 
 
