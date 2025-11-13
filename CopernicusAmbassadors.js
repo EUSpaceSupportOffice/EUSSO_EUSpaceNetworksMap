@@ -1,4 +1,12 @@
   const CopAmbs = [
+   {
+      "Name": "Manuel Davila Sguerra",
+      "Address": "Calle 129C Nro 57A-50\n 11001000 Bogota DC\n Colombia",
+      "Coordinates": "4.71927005286428, -74.06752152211935",
+      "Contact": "Manuel Davila",
+      "Email": "manueldavilasguerra@gmail.com",
+      "Link": ""
+    },
     {
       "Name": "State Authority for Geospatial Information (ASIG)",
       "Address": "Rruga Papa Gjon Pali IINd. 2, H. 3, 1010, Tirana«, Albania",
@@ -2691,5 +2699,6 @@
     ];
 
     exports =CopAmbs;
+
 
 
