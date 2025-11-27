@@ -923,8 +923,8 @@
       "Name": "Spanish National Geographic Institute (IGN)",
       "Address": "Calle del Gral. Ibánez de Ibero, 3 Madrid, Spain",
       "Coordinates": "40.425833, -3.683333",
-      "Contact": "Bruno  Perez Martí­n",
-      "Email": "bperez@transportes.gob.es",
+      "Contact": "José Luis Bermejo Priego; Samuel Parada Bustelo",
+      "Email": " jlbermejo@transportes.gob.es; sparada@transportes.gob.es",
       "Link": "https://www.ign.es/csw-inspire/srv/eng/main.home"
     },
     {
@@ -2699,6 +2699,7 @@
     ];
 
     exports =CopAmbs;
+
 
 
 
