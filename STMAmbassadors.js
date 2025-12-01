@@ -25,8 +25,8 @@
     },
     {
       "Name": "Skypuzzler Aps",
-      "Address": "3 Rue Tarfaya, 31400 Toulouse, France",
-      "Coordinates": "43.563985800996434, 1.4882027222500849",
+      "Address": "Østergade 16, 4 DK-1100 Copernhagen, Denmark",
+      "Coordinates": "55.6802179125343, 12.583840126679549",
       "Contact": "Elgiz Baskaya",
       "Email": "elgiz.baskaya@skypuzzler.com",
       "Link": "https://www.skypuzzler.com/"
@@ -34,6 +34,7 @@
     ];
 
     exports =STMAmbs;
+
 
 
 
