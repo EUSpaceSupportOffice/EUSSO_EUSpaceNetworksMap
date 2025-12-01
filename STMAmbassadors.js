@@ -30,10 +30,19 @@
       "Contact": "Elgiz Baskaya",
       "Email": "elgiz.baskaya@skypuzzler.com",
       "Link": "https://www.skypuzzler.com/"
+    },
+    {
+      "Name": "Look Up Space",
+      "Address": "18 Rue des Cosmonautes 31400 Toulouse, France",
+      "Coordinates": "43.56176346894219, 1.4953383107768232",
+      "Contact": "Juan Carlos Dolado",
+      "Email": "jc.dolado@lookupspace.com",
+      "Link": "https://www.lookupspace.com"
     }
     ];
 
     exports =STMAmbs;
+
 
 
 
