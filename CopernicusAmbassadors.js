@@ -321,8 +321,8 @@
     },
     {
       "Name": "IDGEO  - Institut de Developpement de la Geomatique",
-      "Address": "42 AV du General de Croutte, 31100 Toulouse, France",
-      "Coordinates": "43.573611, 1.438333",
+      "Address": "1 All. Maurice Magre, 31770 Colomiers, France",
+      "Coordinates": "43.59723807959944, 1.3492566684488796",
       "Contact": "Renaud Lahaye",
       "Email": "renaud.lahaye@idgeo.fr",
       "Link": "https://idgeo.fr/"
@@ -1399,14 +1399,6 @@
         "Contact": "Emmanueil  Detsis",
         "Email": "edetsis@esf.org",
         "Link": "https://www.essc.esf.org/"
-    },
-    {
-        "Name": "IDGEO",
-        "Address": "42 AV du General de Croutte, 31100 Toulouse, France",
-        "Coordinates": "43.580278, 1.443056",
-        "Contact": "Renaud Lahaye",
-        "Email": "renaud.lahaye@idgeo.fr",
-        "Link": "https://idgeo.fr/"
     },
     {
         "Name": "Institut Polytechnique des Sciences Avancees (IPSA) - site de Toulouse",
@@ -2699,6 +2691,7 @@
     ];
 
     exports =CopAmbs;
+
 
 
 
