@@ -2682,15 +2682,24 @@
     },
     {
         "Name": "MGC Consulting Niger",
-        "Address": "SONUCI , Niamey - Niger",
+        "Address": "SONUCI, Niamey - Niger",
         "Coordinates": "13.54898, 2.06733",
         "Contact": "Moumouni Guingarey Chamssoudina",
         "Email": "dg@mgcsigconsultingniger.com",
         "Link": "https://www.mgcsigconsultingniger.com/"
+    },
+    {
+        "Name": "IMIB - Biodiversity Research Institute, CSIC-Univeristy of Oviedo, Spain",
+        "Address": "Campus de Mieres (Univ. de Oviedo) Edificio de Investigación – 5ª planta - c/ Gonzalo Gutiérrez Quirós s/n, E-33600 Mieres, Spain",
+        "Coordinates": "43.240934156471624, -5.776544460401256",
+        "Contact": "Jose Manuel Alvarez Martinez ",
+        "Email": "jm.alvarez@uniovi.es",
+        "Link": "https://imib.csic.es/"
     }
     ];
 
     exports =CopAmbs;
+
 
 
 
