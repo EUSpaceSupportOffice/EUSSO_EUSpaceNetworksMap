@@ -2689,16 +2689,25 @@
         "Link": "https://www.mgcsigconsultingniger.com/"
     },
     {
-        "Name": "IMIB - Biodiversity Research Institute, CSIC-Univeristy of Oviedo, Spain",
+        "Name": "IMIB - Biodiversity Research Institute, CSIC-Univeristy of Oviedo",
         "Address": "Campus de Mieres (Univ. de Oviedo) Edificio de Investigación – 5ª planta - c/ Gonzalo Gutiérrez Quirós s/n, E-33600 Mieres, Spain",
         "Coordinates": "43.240934156471624, -5.776544460401256",
-        "Contact": "Jose Manuel Alvarez Martinez ",
+        "Contact": "Jose Manuel Alvarez Martinez",
         "Email": "jm.alvarez@uniovi.es",
         "Link": "https://imib.csic.es/"
+    },
+    {
+        "Name": "Idearium Consultores",
+        "Address": "C/ Valle de Zuriza, nº19, portal 2 odicina 7-8 50015 Zaragoza, Spain",
+        "Coordinates": "41.661626870728064, -0.8727305602245481",
+        "Contact": "David Portolés",
+        "Email": "dportoles@idearium.eu",
+        "Link": "https://www.idearium.eu/"
     }
     ];
 
     exports =CopAmbs;
+
 
 
 
