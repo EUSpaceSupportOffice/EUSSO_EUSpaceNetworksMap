@@ -2703,10 +2703,43 @@
         "Contact": "David Portolés",
         "Email": "dportoles@idearium.eu",
         "Link": "https://www.idearium.eu/"
+    },
+    {
+        "Name": "Hygeo",
+        "Address": "Cité Caisse, Niamey, Niger",
+        "Coordinates": "13.5468801575787, 2.1318884277279264",
+        "Contact": "Cheffou Mairounkoundoum",
+        "Email": "rachidcheffou@yahoo.fr",
+        "Link": "https://hygeo.free.nf/"
+    },
+    {
+        "Name": "The National Technical Studies and Development Office (BNETD)",
+        "Address": "Boulevard Hassan II, Cocody 04 bp 945, Abidjan 04, Côte d’Ivoire",
+        "Coordinates": "5.328538774641988, -4.008012400918879",
+        "Contact": "Fernand Bale",
+        "Email": "fbale@bnetd.ci",
+        "Link": "https://www.bnetd.ci/fr"
+    },
+    {
+        "Name": "Specto Natura Ltd",
+        "Address": "9 College Road  CB24 9PL Cambridge United Kingdom",
+        "Coordinates": "52.240916078478094, 0.1071055825763812",
+        "Contact": "Geoff Smith",
+        "Email": "geoffsmith@specto-natura.co.uk",
+        "Link": "http://www.specto-natura.co.uk/"
+    },
+    {
+        "Name": "Africa-eo-services (AfEOS)",
+        "Address": "Immeuble X, 8 Al Baraka, Complexe Al Ghorfa, Avenue Hassan 1 – Temara (Rabat), Morocco",
+        "Coordinates": "33.898439830954324, -6.919803084654569",
+        "Contact": "Ouafae Karim",
+        "Email": "ouafae.karim@afeos.ma ",
+        "Link": "https://afeos.ma/fr"
     }
     ];
 
     exports =CopAmbs;
+
 
 
 
