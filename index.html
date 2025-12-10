@@ -105,6 +105,11 @@
               <input type="checkbox" id="STMAmbsCheckbox" checked>
               SSA/STM Ambassadors
             </label>
+
+            <label class="chk">
+              <input type="checkbox" id="EUSAmbsCheckbox" checked>
+              EU Space Ambassadors
+            </label>
           </div>
         </div>       
       </div>
@@ -119,6 +124,8 @@
 <script src="CopernicusAmbassadors.js"></script>
 <script src="GalileoAmbassadors.js"></script>
 <script src="STMAmbassadors.js"></script>
+<script src="EUSAmbassadors.js"></script>
+
 
 <script> 
   //Map initialization
@@ -154,6 +161,7 @@
     iconUrl: 'Blue.svg', 
     iconSize: [25,25], 
     });
+ 
 
 // Function to update marker size based on zoom level
 function updateMarkerSize() {
@@ -172,6 +180,8 @@ function updateMarkerSize() {
     myIcon_Purple.options.iconSize = newSize;
     myIcon_Orange.options.iconSize = newSize;
     myIcon_Red.options.iconSize = newSize;
+    myIcon_Blue.options.iconSize = newSize;
+
 
     // Refresh markers to apply changes
     map.eachLayer(function (layer) {
@@ -278,6 +288,31 @@ for (let i = 0; i < STMAmbs.length; i++) {
   }
 };
 
+//Loop through the EU Space AMBASSADORS and add markers to the cluster group
+for (let i = 0; i < EUSAmbs.length; i++) {
+  const EUSAmb = EUSAmbs[i];
+  const coordinates = EUSAmb.Coordinates.split(',').map(coord => parseFloat(coord.trim()));
+
+  if (!isNaN(coordinates[0]) && !isNaN(coordinates[1])) {
+    let popupContentEUSAmbs;
+    
+    //Build popup content 
+    popupContentEUSAmbs = `
+    <strong>${EUSAmb.Name}</strong><br>
+      Primary contact: ${EUSAmb.Contact}<br>
+      Email: <a href="mailto:${EUSAmb.Email}">${EUSAmb.Email}</a><br>`;
+
+    //Add link only if academy.Link has a value
+    if (EUSAmb.Link) {
+      popupContentEUSAmbs += ` <a href="${EUSAmb.Link}" target="_blank">More info</a>`;
+    }
+
+    const marker = L.marker(coordinates, { icon: myIcon_Blue, iconSize: [10, 50]});
+    marker.bindPopup(popupContentEUSAmbs);
+    marker.addTo(map);
+  }
+};
+  
 //Legend
 
 const legend = L.control({ position: 'topright' });
@@ -300,6 +335,10 @@ legend.onAdd = function (map) {
     <div class="legend-row">
       <span class="legend-icon" style="background-image:url('Purple.svg');"></span>
       SSA/STM Ambassadors
+    </div>
+    <div class="legend-row">
+      <span class="legend-icon" style="background-image:url('Blue.svg');"></span>
+      EU Space Ambassadors
     </div>
   `;
 
@@ -328,6 +367,9 @@ GalAmbsCheckbox.addEventListener('change', updateMarkers);
 
 const STMAmbsCheckbox = document.getElementById('STMAmbsCheckbox');
 STMAmbsCheckbox.addEventListener('change', updateMarkers);
+
+const EUSAmbsCheckbox = document.getElementById('EUSAmbsCheckbox');
+EUSAmbsCheckbox.addEventListener('change', updateMarkers);
 
 function updateMarkers() {
   map.eachLayer(function (layer) {
@@ -405,6 +447,29 @@ function updateMarkers() {
       }
     }
 
+    // Add EUSAmb markers if the checkbox is checked
+  if (EUSAmbsCheckbox.checked) {
+    for (let i = 0; i < EUSAmbs.length; i++) {
+      const EUSAmb = EUSAmbs[i];
+      const coordinates = EUSAmb.Coordinates.split(',').map(coord => parseFloat(coord.trim()));
+
+      if (!isNaN(coordinates[0]) && !isNaN(coordinates[1])) {
+        let popupContentEUSAmbs = `
+        <strong>${EUSAmb.Name}</strong><br>
+        Primary contact: ${EUSAmb.Contact}<br>
+        Email: <a href="mailto:${EUSAmb.Email}">${EUSAmb.Email}</a><br>`;
+      //Add link only if academy.Link has a value
+      if (EUSAmb.Link) {
+          popupContentEUSAmbs += ` <a href="${EUSAmb.Link}" target="_blank">More info</a>`;
+        }
+        
+    const marker = L.marker(coordinates, { icon: myIcon_Blue });
+    marker.bindPopup(popupContentEUSAmbs);
+    marker.addTo(map);
+    }
+      }
+    }
+
   };
 
 // Listen to the zoomend event on the map
@@ -474,5 +539,6 @@ findDuplicateCopAmbsCoord(CopAmbs);
 </body>
 
 </html>
+
 
 
