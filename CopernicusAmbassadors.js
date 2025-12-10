@@ -2515,7 +2515,7 @@
     {
         "Name": "Universidad de Jaen - Photogrammetric and Topometric Systems Research Group",
         "Address": "Edificio A3. Campus Las Lagunillas s/n | 23071 - Jaen, Spain",
-        "Coordinates": "23071 - Jaen, Spain",
+        "Coordinates": "37.78757553960186, -3.7775326167617704",
         "Contact": "Jorge Delgado",
         "Email": "jdelgado@ujaen.es",
         "Link": "https://coello.ujaen.es/investigacion/websft/index_en.html"
@@ -2739,6 +2739,7 @@
     ];
 
     exports =CopAmbs;
+
 
 
 
