@@ -86,200 +86,217 @@
   </head>
 
   <body>
-      <div id="map">
-        <div class="filter-container">
-          <div class="filters">
-            <label class="chk">
-              <input type="checkbox" id="CopAmbsCheckbox" checked>
-              Copernicus Ambassadors
-            </label>
+    <div id="map">
+      <div class="filter-container">
+        <div class="filters">
+          <label class="chk">
+            <input type="checkbox" id="CopAmbsCheckbox" checked>
+            Copernicus Ambassadors
+          </label>
 
-            <label class="chk">
-              <input type="checkbox" id="GalAmbsCheckbox" checked>
-              Galileo/EGNOS Ambassadors
-            </label>
+          <label class="chk">
+            <input type="checkbox" id="GalAmbsCheckbox" checked>
+            Galileo/EGNOS Ambassadors
+          </label>
 
-            <label class="chk">
-              <input type="checkbox" id="STMAmbsCheckbox" checked>
-              SSA/STM Ambassadors
-            </label>
+          <label class="chk">
+            <input type="checkbox" id="STMAmbsCheckbox" checked>
+            SSA/STM Ambassadors
+          </label>
 
-            <label class="chk">
-              <input type="checkbox" id="EUSAmbsCheckbox" checked>
-              EU Space Ambassadors
-            </label>
-          </div>
-        </div>       
-      </div>
+          <label class="chk">
+            <input type="checkbox" id="EUSAmbsCheckbox" checked>
+            EU Space Ambassadors
+          </label>
+        </div>
+      </div>       
+    </div>
 
-<!-- leaflet js -->
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <!-- leaflet js -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
-<!-- import relays variable from external javascript file -->
-<script src="CopernicusAmbassadors.js"></script>
-<script src="GalileoAmbassadors.js"></script>
-<script src="STMAmbassadors.js"></script>
-<script src="EUSpaceAmbassadors.js"></script>
+    <!-- import relays variable from external javascript file -->
+    <script src="CopernicusAmbassadors.js"></script>
+    <script src="GalileoAmbassadors.js"></script>
+    <script src="STMAmbassadors.js"></script>
+    <script src="EUSpaceAmbassadors.js"></script>
 
-<script> 
-// Map init
-const map = L.map('map').setView([49.5, 15],4);
+    <script> 
+      // Map init
+      const map = L.map('map').setView([49.5, 15], 4);
 
-// GISCO layer
-const giscoLayer = L.tileLayer('https://gisco-services.ec.europa.eu/maps/tiles/OSMCartoComposite/EPSG3857/{z}/{x}/{y}.png', {
-  maxZoom: 19,
-  attribution: '&copy; EC-GISCO | © OSM'
-});
-giscoLayer.addTo(map);
+      // GISCO layer
+      const giscoLayer = L.tileLayer('https://gisco-services.ec.europa.eu/maps/tiles/OSMCartoComposite/EPSG3857/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; EC-GISCO | © OSM'
+      });
+      giscoLayer.addTo(map);
 
-// ICONS
-const myIcon_Orange = L.icon({ iconUrl: 'Orange.svg', iconSize: [25,25] });
-const myIcon_Blue = L.icon({ iconUrl: 'Blue.svg', iconSize: [25,25] });
-const myIcon_LightBlue = L.icon({ iconUrl: 'LightBlue.svg', iconSize: [25,25] });
-const myIcon_Purple = L.icon({ iconUrl: 'Purple.svg', iconSize: [25,25] });
-const myIcon_Red = L.icon({ iconUrl: 'Red.svg', iconSize: [25,25] });
+      // ICONS
+      const myIcon_Orange    = L.icon({ iconUrl: 'Orange.svg',    iconSize: [25,25] });
+      const myIcon_Blue      = L.icon({ iconUrl: 'Blue.svg',      iconSize: [25,25] });
+      const myIcon_LightBlue = L.icon({ iconUrl: 'LightBlue.svg', iconSize: [25,25] });
+      const myIcon_Purple    = L.icon({ iconUrl: 'Purple.svg',    iconSize: [25,25] });
+      const myIcon_Red       = L.icon({ iconUrl: 'Red.svg',       iconSize: [25,25] });
 
-// Dedicated layer groups
-const CopLayer = L.layerGroup().addTo(map);
-const GalLayer = L.layerGroup().addTo(map);
-const STMLayer = L.layerGroup().addTo(map);
-const EUSLayer = L.layerGroup().addTo(map);
+      // Dedicated layer groups
+      const CopLayer  = L.layerGroup().addTo(map);
+      const GalLayer  = L.layerGroup().addTo(map);
+      const STMLayer  = L.layerGroup().addTo(map);
+      const EUSLayer  = L.layerGroup().addTo(map);
+      const EUSSOLayer = L.layerGroup().addTo(map);
 
-// Marker size updater
-function updateMarkerSize() {
-  const currentZoom = map.getZoom();
-  let newSize = [30 * (currentZoom / 5), 30 * (currentZoom / 5)];
-  const maxSize = [30, 30];
-  newSize = [ Math.min(newSize[0], maxSize[0]), Math.min(newSize[1], maxSize[1]) ];
+      // Marker size updater
+      function updateMarkerSize() {
+        const currentZoom = map.getZoom();
+        let newSize = [30 * (currentZoom / 5), 30 * (currentZoom / 5)];
+        const maxSize = [30, 30];
 
-  myIcon_Purple.options.iconSize = newSize;
-  myIcon_Orange.options.iconSize = newSize;
-  myIcon_Red.options.iconSize = newSize;
-  myIcon_Blue.options.iconSize = newSize;
+        newSize = [
+          Math.min(newSize[0], maxSize[0]),
+          Math.min(newSize[1], maxSize[1])
+        ];
 
-  map.eachLayer(layer => {
-    if (layer instanceof L.Marker) {
-      layer.setIcon(L.icon({
-        iconUrl: layer.options.icon.options.iconUrl,
-        iconSize: newSize
-      }));
-    }
-  });
-}
+        // Update base icon sizes
+        myIcon_Purple.options.iconSize    = newSize;
+        myIcon_Orange.options.iconSize    = newSize;
+        myIcon_Red.options.iconSize       = newSize;
+        myIcon_Blue.options.iconSize      = newSize;
+        myIcon_LightBlue.options.iconSize = newSize;
 
-// COP AMBASSADORS
-for (let i = 0; i < CopAmbs.length; i++) {
-  const copAmb = CopAmbs[i];
-  const coordinates = copAmb.Coordinates.split(',').map(coord => parseFloat(coord.trim()));
+        // Update all marker instances on the map
+        map.eachLayer(layer => {
+          if (layer instanceof L.Marker && layer.options.icon && layer.options.icon.options) {
+            layer.setIcon(L.icon({
+              iconUrl: layer.options.icon.options.iconUrl,
+              iconSize: newSize
+            }));
+          }
+        });
+      }
 
-  if (!isNaN(coordinates[0])) {
-    let popupContent = `
-      <strong>${copAmb.Name}</strong><br>
-      Primary contact: ${copAmb.Contact}<br>
-      Email: <a href="mailto:${copAmb.Email}">${copAmb.Email}</a><br>`;
-    if (copAmb.Link) popupContent += `<a href="${copAmb.Link}" target="_blank">More info</a>`;
+      // COP AMBASSADORS
+      for (let i = 0; i < CopAmbs.length; i++) {
+        const copAmb = CopAmbs[i];
+        const coordinates = copAmb.Coordinates.split(',').map(coord => parseFloat(coord.trim()));
 
-    L.marker(coordinates, { icon: myIcon_Orange })
-      .bindPopup(popupContent)
-      .addTo(CopLayer);  
-  }
-}
+        if (!isNaN(coordinates[0])) {
+          let popupContent = `
+            <strong>${copAmb.Name}</strong><br>
+            Primary contact: ${copAmb.Contact}<br>
+            Email: <a href="mailto:${copAmb.Email}">${copAmb.Email}</a><br>`;
+          if (copAmb.Link) popupContent += `<a href="${copAmb.Link}" target="_blank">More info</a>`;
 
-// GALILEO AMBASSADORS
-for (let i = 0; i < GalAmbs.length; i++) {
-  const galAmb = GalAmbs[i];
-  const coordinates = galAmb.Coordinates.split(',').map(coord => parseFloat(coord.trim()));
+          L.marker(coordinates, { icon: myIcon_Orange })
+            .bindPopup(popupContent)
+            .addTo(CopLayer);  
+        }
+      }
 
-  if (!isNaN(coordinates[0])) {
-    let popupContent = `
-      <strong>${galAmb.Name}</strong><br>
-      Primary contact: ${galAmb.Contact}<br>
-      Email: <a href="mailto:${galAmb.Email}">${galAmb.Email}</a><br>`;
-    if (galAmb.Link) popupContent += `<a href="${galAmb.Link}" target="_blank">More info</a>`;
+      // GALILEO AMBASSADORS
+      for (let i = 0; i < GalAmbs.length; i++) {
+        const galAmb = GalAmbs[i];
+        const coordinates = galAmb.Coordinates.split(',').map(coord => parseFloat(coord.trim()));
 
-    L.marker(coordinates, { icon: myIcon_Blue })
-      .bindPopup(popupContent)
-      .addTo(GalLayer);  
-  }
-}
+        if (!isNaN(coordinates[0])) {
+          let popupContent = `
+            <strong>${galAmb.Name}</strong><br>
+            Primary contact: ${galAmb.Contact}<br>
+            Email: <a href="mailto:${galAmb.Email}">${galAmb.Email}</a><br>`;
+          if (galAmb.Link) popupContent += `<a href="${galAmb.Link}" target="_blank">More info</a>`;
 
-// STM AMBASSADORS
-for (let i = 0; i < STMAmbs.length; i++) {
-  const stmAmb = STMAmbs[i];
-  const coordinates = stmAmb.Coordinates.split(',').map(coord => parseFloat(coord.trim()));
+          L.marker(coordinates, { icon: myIcon_Blue })
+            .bindPopup(popupContent)
+            .addTo(GalLayer);  
+        }
+      }
 
-  if (!isNaN(coordinates[0])) {
-    let popupContent = `
-      <strong>${stmAmb.Name}</strong><br>
-      Primary contact: ${stmAmb.Contact}<br>
-      Email: <a href="mailto:${stmAmb.Email}">${stmAmb.Email}</a><br>`;
-    if (stmAmb.Link) popupContent += `<a href="${stmAmb.Link}" target="_blank">More info</a>`;
+      // STM AMBASSADORS
+      for (let i = 0; i < STMAmbs.length; i++) {
+        const stmAmb = STMAmbs[i];
+        const coordinates = stmAmb.Coordinates.split(',').map(coord => parseFloat(coord.trim()));
 
-    L.marker(coordinates, { icon: myIcon_Purple })
-      .bindPopup(popupContent)
-      .addTo(STMLayer); 
-  }
-}
+        if (!isNaN(coordinates[0])) {
+          let popupContent = `
+            <strong>${stmAmb.Name}</strong><br>
+            Primary contact: ${stmAmb.Contact}<br>
+            Email: <a href="mailto:${stmAmb.Email}">${stmAmb.Email}</a><br>`;
+          if (stmAmb.Link) popupContent += `<a href="${stmAmb.Link}" target="_blank">More info</a>`;
 
-// EU SPACE AMBASSADORS
-for (let i = 0; i < EUSAmbs.length; i++) {
-  const EUSAmb = EUSAmbs[i];
-  const coordinates = EUSAmb.Coordinates.split(',').map(coord => parseFloat(coord.trim()));
+          L.marker(coordinates, { icon: myIcon_Purple })
+            .bindPopup(popupContent)
+            .addTo(STMLayer); 
+        }
+      }
 
-  if (!isNaN(coordinates[0])) {
-    let popupContent = `
-      <strong>${EUSAmb.Name}</strong><br>
-      Primary contact: ${EUSAmb.Contact}<br>
-      Email: <a href="mailto:${EUSAmb.Email}">${EUSAmb.Email}</a><br>`;
-    if (EUSAmb.Link) popupContent += `<a href="${EUSAmb.Link}" target="_blank">More info</a>`;
+      // EU SPACE AMBASSADORS
+      for (let i = 0; i < EUSAmbs.length; i++) {
+        const EUSAmb = EUSAmbs[i];
+        const coordinates = EUSAmb.Coordinates.split(',').map(coord => parseFloat(coord.trim()));
 
-    L.marker(coordinates, { icon: myIcon_LightBlue })
-      .bindPopup(popupContent)
-      .addTo(EUSLayer);   
-  }
-}
+        if (!isNaN(coordinates[0])) {
+          let popupContent = `
+            <strong>${EUSAmb.Name}</strong><br>
+            Primary contact: ${EUSAmb.Contact}<br>
+            Email: <a href="mailto:${EUSAmb.Email}">${EUSAmb.Email}</a><br>`;
+          if (EUSAmb.Link) popupContent += `<a href="${EUSAmb.Link}" target="_blank">More info</a>`;
 
-// Legend
-const legend = L.control({ position: 'topright' });
-legend.onAdd = function () {
-  const div = L.DomUtil.create('div', 'legend-card');
-  div.innerHTML = `
-    <div class="legend-row"><span class="legend-icon" style="background-image:url('Red.svg');"></span> EU Space Support Office</div>
-    <div class="legend-row"><span class="legend-icon" style="background-image:url('Orange.svg');"></span> Copernicus Ambassadors</div>
-    <div class="legend-row"><span class="legend-icon" style="background-image:url('Blue.svg');"></span> Galileo/EGNOS Ambassadors</div>
-    <div class="legend-row"><span class="legend-icon" style="background-image:url('Purple.svg');"></span> SSA/STM Ambassadors</div>
-    <div class="legend-row"><span class="legend-icon" style="background-image:url('Blue.svg');"></span> EU Space Ambassadors</div>
-  `;
-  return div;
-};
-legend.addTo(map);
+          L.marker(coordinates, { icon: myIcon_LightBlue })
+            .bindPopup(popupContent)
+            .addTo(EUSLayer);   
+        }
+      }
 
-// EU SUPPORT OFFICE MARKER
-const EUSSOLayer = L.layerGroup().addTo(map);
-const brusselsCoordinates = [50.8403436233206, 4.384885539104331];
-const brusselsPopup = `
-  <strong>EU Space Support Office</strong><br>
-  Email: <a href="mailto:support@euspace-programme.eu">support@euspace-programme.eu</a><br>
-  <a href="https://www.copernicus.eu/en" target="_blank">More info</a>
-`;
-L.marker(brusselsCoordinates, {icon: myIcon_Red})
-  .bindPopup(brusselsPopup)
-  .addTo(EUSSOLayer);
+      // Legend
+      const legend = L.control({ position: 'topright' });
+      legend.onAdd = function () {
+        const div = L.DomUtil.create('div', 'legend-card');
+        div.innerHTML = `
+          <div class="legend-row"><span class="legend-icon" style="background-image:url('Red.svg');"></span> EU Space Support Office</div>
+          <div class="legend-row"><span class="legend-icon" style="background-image:url('Orange.svg');"></span> Copernicus Ambassadors</div>
+          <div class="legend-row"><span class="legend-icon" style="background-image:url('Blue.svg');"></span> Galileo/EGNOS Ambassadors</div>
+          <div class="legend-row"><span class="legend-icon" style="background-image:url('Purple.svg');"></span> SSA/STM Ambassadors</div>
+          <div class="legend-row"><span class="legend-icon" style="background-image:url('LightBlue.svg');"></span> EU Space Ambassadors</div>
+        `;
+        return div;
+      };
+      legend.addTo(map);
 
-// FILTER CHECKBOXES
-function updateMarkers() {
-  CopAmbsCheckbox.checked ? map.addLayer(CopLayer) : map.removeLayer(CopLayer);
-  GalAmbsCheckbox.checked ? map.addLayer(GalLayer) : map.removeLayer(GalLayer);
-  STMAmbsCheckbox.checked ? map.addLayer(STMLayer) : map.removeLayer(STMLayer);
-  EUSAmbsCheckbox.checked ? map.addLayer(EUSLayer) : map.removeLayer(EUSLayer);
-}
+      // EU SUPPORT OFFICE MARKER
+      const brusselsCoordinates = [50.8403436233206, 4.384885539104331];
+      const brusselsPopup = `
+        <strong>EU Space Support Office</strong><br>
+        Email: <a href="mailto:support@euspace-programme.eu">support@euspace-programme.eu</a><br>
+        <a href="https://www.copernicus.eu/en" target="_blank">More info</a>
+      `;
+      L.marker(brusselsCoordinates, {icon: myIcon_Red})
+        .bindPopup(brusselsPopup)
+        .addTo(EUSSOLayer);
 
-CopAmbsCheckbox.addEventListener('change', updateMarkers);
-GalAmbsCheckbox.addEventListener('change', updateMarkers);
-STMAmbsCheckbox.addEventListener('change', updateMarkers);
-EUSAmbsCheckbox.addEventListener('change', updateMarkers);
+      // FILTER CHECKBOXES (explicit references)
+      const CopAmbsCheckbox = document.getElementById('CopAmbsCheckbox');
+      const GalAmbsCheckbox = document.getElementById('GalAmbsCheckbox');
+      const STMAmbsCheckbox = document.getElementById('STMAmbsCheckbox');
+      const EUSAmbsCheckbox = document.getElementById('EUSAmbsCheckbox');
 
-map.on('zoomend', updateMarkerSize);
-</script>
-</body>
+      function updateMarkers() {
+        CopAmbsCheckbox.checked ? map.addLayer(CopLayer) : map.removeLayer(CopLayer);
+        GalAmbsCheckbox.checked ? map.addLayer(GalLayer) : map.removeLayer(GalLayer);
+        STMAmbsCheckbox.checked ? map.addLayer(STMLayer) : map.removeLayer(STMLayer);
+        EUSAmbsCheckbox.checked ? map.addLayer(EUSLayer) : map.removeLayer(EUSLayer);
+      }
+
+      // Attach events
+      CopAmbsCheckbox.addEventListener('change', updateMarkers);
+      GalAmbsCheckbox.addEventListener('change', updateMarkers);
+      STMAmbsCheckbox.addEventListener('change', updateMarkers);
+      EUSAmbsCheckbox.addEventListener('change', updateMarkers);
+
+      // Resize markers on zoom
+      map.on('zoomend', updateMarkerSize);
+
+      // Initial sizing (optional but nice)
+      updateMarkerSize();
+    </script>
+  </body>
 </html>
