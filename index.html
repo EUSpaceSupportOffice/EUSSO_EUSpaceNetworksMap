@@ -7,7 +7,6 @@
     <!-- leaflet css -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
 
-
     <style>
       body{
         margin:0;
@@ -75,12 +74,11 @@
         height:18px;
         display:inline-block;
         flex:0 0 18px;
-        background-size:contain;      /* scale to fit box */
+        background-size:contain;
         background-repeat:no-repeat;
         background-position:center;
       }
 
-      /* Optional: stack filters on small screens */
       @media (max-width: 700px){
         .filters{ grid-template-columns:1fr; }
       }
@@ -113,12 +111,9 @@
           </div>
         </div>       
       </div>
-      
-  
 
-<!--leaflet js -->
+<!-- leaflet js -->
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-
 
 <!-- import relays variable from external javascript file -->
 <script src="CopernicusAmbassadors.js"></script>
@@ -126,420 +121,165 @@
 <script src="STMAmbassadors.js"></script>
 <script src="EUSpaceAmbassadors.js"></script>
 
-
 <script> 
-  //Map initialization
-  const map = L.map('map').setView([49.5, 15],4);
+// Map init
+const map = L.map('map').setView([49.5, 15],4);
 
-  // GISCO layer
-  const giscoLayer = L.tileLayer('https://gisco-services.ec.europa.eu/maps/tiles/OSMCartoComposite/EPSG3857/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '&copy; <a href="https://ec.europa.eu/eurostat/web/gisco/overview">EC-GISCO</a> | &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-    //attribution: '© OpenStreetMap contributors, Credit: EC-GISCO'
-    });
-  giscoLayer.addTo(map);
+// GISCO layer
+const giscoLayer = L.tileLayer('https://gisco-services.ec.europa.eu/maps/tiles/OSMCartoComposite/EPSG3857/{z}/{x}/{y}.png', {
+  maxZoom: 19,
+  attribution: '&copy; EC-GISCO | © OSM'
+});
+giscoLayer.addTo(map);
 
-  //MARKERS
-  //Icon style
-  const myIcon_Orange = L.icon({
-    iconUrl: 'Orange.svg',
-    iconSize: [25,25],
-    });
+// ICONS
+const myIcon_Orange = L.icon({ iconUrl: 'Orange.svg', iconSize: [25,25] });
+const myIcon_Blue = L.icon({ iconUrl: 'Blue.svg', iconSize: [25,25] });
+const myIcon_LightBlue = L.icon({ iconUrl: 'LightBlue.svg', iconSize: [25,25] });
+const myIcon_Purple = L.icon({ iconUrl: 'Purple.svg', iconSize: [25,25] });
+const myIcon_Red = L.icon({ iconUrl: 'Red.svg', iconSize: [25,25] });
 
-  const myIcon_Red= L.icon({
-    iconUrl: 'Red.svg',
-    iconSize: [25,25],
-    });
+// Dedicated layer groups
+const CopLayer = L.layerGroup().addTo(map);
+const GalLayer = L.layerGroup().addTo(map);
+const STMLayer = L.layerGroup().addTo(map);
+const EUSLayer = L.layerGroup().addTo(map);
 
-  const myIcon_Purple =L.icon({
-      iconUrl: 'Purple.svg',
-      iconSize: [25,25], 
-
-    });
-
-    const myIcon_Blue = L.icon({
-    iconUrl: 'Blue.svg', 
-    iconSize: [25,25], 
-    });
- 
-
-// Function to update marker size based on zoom level
+// Marker size updater
 function updateMarkerSize() {
-    const currentZoom = map.getZoom();
-    // Adjust marker size based on zoom level
-    let newSize = [30 * (currentZoom / 5), 30 * (currentZoom / 5)]; // Adjust the multiplier as needed
-    // Define maximum size for the icons
-    const maxSize = [30, 30]; // Adjust as needed
+  const currentZoom = map.getZoom();
+  let newSize = [30 * (currentZoom / 5), 30 * (currentZoom / 5)];
+  const maxSize = [30, 30];
+  newSize = [ Math.min(newSize[0], maxSize[0]), Math.min(newSize[1], maxSize[1]) ];
 
-    // Limit the size of the icons to the maximum size
-    newSize = [
-        Math.min(newSize[0], maxSize[0]),
-        Math.min(newSize[1], maxSize[1])
-    ];
+  myIcon_Purple.options.iconSize = newSize;
+  myIcon_Orange.options.iconSize = newSize;
+  myIcon_Red.options.iconSize = newSize;
+  myIcon_Blue.options.iconSize = newSize;
 
-    myIcon_Purple.options.iconSize = newSize;
-    myIcon_Orange.options.iconSize = newSize;
-    myIcon_Red.options.iconSize = newSize;
-    myIcon_Blue.options.iconSize = newSize;
-
-
-    // Refresh markers to apply changes
-    map.eachLayer(function (layer) {
-        if (layer instanceof L.Marker) {
-            // Check if the marker's icon is myIcon_Purple
-            if (layer.options.icon.options.iconUrl === myIcon_Purple.options.iconUrl) {
-                layer.setIcon(L.icon({
-                    iconUrl: myIcon_Purple.options.iconUrl,
-                    iconSize: newSize,
-                }));
-            }
-            if (layer.options.icon.options.iconUrl === myIcon_Red.options.iconUrl) {layer.setIcon(L.icon({
-                    iconUrl: myIcon_Red.options.iconUrl,
-                    iconSize: newSize,
-                }));
-            }
-            if (layer.options.icon.options.iconUrl === myIcon_Orange.options.iconUrl) {layer.setIcon(L.icon({
-                    iconUrl: myIcon_Orange.options.iconUrl,
-                    iconSize: newSize,
-                }));
-            }
-            if (layer.options.icon.options.iconUrl === myIcon_Blue.options.iconUrl) {layer.setIcon(L.icon({
-                    iconUrl: myIcon_Blue.options.iconUrl,
-                    iconSize: newSize,
-                }));
-            }             
-        }
-    });
+  map.eachLayer(layer => {
+    if (layer instanceof L.Marker) {
+      layer.setIcon(L.icon({
+        iconUrl: layer.options.icon.options.iconUrl,
+        iconSize: newSize
+      }));
+    }
+  });
 }
 
-
-//Loop through the COP AMBASSADORS and add markers to the cluster group
+// COP AMBASSADORS
 for (let i = 0; i < CopAmbs.length; i++) {
   const copAmb = CopAmbs[i];
   const coordinates = copAmb.Coordinates.split(',').map(coord => parseFloat(coord.trim()));
 
-  if (!isNaN(coordinates[0]) && !isNaN(coordinates[1])) {
-    let popupContentCopAmbs;
-    
-    //Build popup content 
-    popupContentCopAmbs = `
-    <strong>${copAmb.Name}</strong><br>
+  if (!isNaN(coordinates[0])) {
+    let popupContent = `
+      <strong>${copAmb.Name}</strong><br>
       Primary contact: ${copAmb.Contact}<br>
       Email: <a href="mailto:${copAmb.Email}">${copAmb.Email}</a><br>`;
+    if (copAmb.Link) popupContent += `<a href="${copAmb.Link}" target="_blank">More info</a>`;
 
-    //Add link only if academy.Link has a value
-    if (copAmb.Link) {
-      popupContentCopAmbs += ` <a href="${copAmb.Link}" target="_blank">More info</a>`;
-    }
-
-    const marker = L.marker(coordinates, { icon: myIcon_Orange, iconSize: [10, 50]});
-    marker.bindPopup(popupContentCopAmbs);
-    marker.addTo(map);
+    L.marker(coordinates, { icon: myIcon_Orange })
+      .bindPopup(popupContent)
+      .addTo(CopLayer);  
   }
-};
+}
 
-//Loop through the GALILEO AMBASSADORS and add markers to the cluster group
+// GALILEO AMBASSADORS
 for (let i = 0; i < GalAmbs.length; i++) {
   const galAmb = GalAmbs[i];
   const coordinates = galAmb.Coordinates.split(',').map(coord => parseFloat(coord.trim()));
 
-  if (!isNaN(coordinates[0]) && !isNaN(coordinates[1])) {
-    let popupContentGalAmbs;
-    
-    //Build popup content 
-    popupContentGalAmbs = `
-    <strong>${galAmb.Name}</strong><br>
+  if (!isNaN(coordinates[0])) {
+    let popupContent = `
+      <strong>${galAmb.Name}</strong><br>
       Primary contact: ${galAmb.Contact}<br>
       Email: <a href="mailto:${galAmb.Email}">${galAmb.Email}</a><br>`;
+    if (galAmb.Link) popupContent += `<a href="${galAmb.Link}" target="_blank">More info</a>`;
 
-    //Add link only if academy.Link has a value
-    if (galAmb.Link) {
-      popupContentGalAmbs += ` <a href="${galAmb.Link}" target="_blank">More info</a>`;
-    }
-
-    const marker = L.marker(coordinates, { icon: myIcon_Blue, iconSize: [10, 50]});
-    marker.bindPopup(popupContentGalAmbs);
-    marker.addTo(map);
+    L.marker(coordinates, { icon: myIcon_Blue })
+      .bindPopup(popupContent)
+      .addTo(GalLayer);  
   }
-};
+}
 
-//Loop through the STM AMBASSADORS and add markers to the cluster group
+// STM AMBASSADORS
 for (let i = 0; i < STMAmbs.length; i++) {
   const stmAmb = STMAmbs[i];
   const coordinates = stmAmb.Coordinates.split(',').map(coord => parseFloat(coord.trim()));
 
-  if (!isNaN(coordinates[0]) && !isNaN(coordinates[1])) {
-    let popupContentSTMAmbs;
-    
-    //Build popup content 
-    popupContentSTMAmbs = `
-    <strong>${stmAmb.Name}</strong><br>
+  if (!isNaN(coordinates[0])) {
+    let popupContent = `
+      <strong>${stmAmb.Name}</strong><br>
       Primary contact: ${stmAmb.Contact}<br>
       Email: <a href="mailto:${stmAmb.Email}">${stmAmb.Email}</a><br>`;
+    if (stmAmb.Link) popupContent += `<a href="${stmAmb.Link}" target="_blank">More info</a>`;
 
-    //Add link only if academy.Link has a value
-    if (stmAmb.Link) {
-      popupContentSTMAmbs += ` <a href="${stmAmb.Link}" target="_blank">More info</a>`;
-    }
-
-    const marker = L.marker(coordinates, { icon: myIcon_Purple, iconSize: [10, 50]});
-    marker.bindPopup(popupContentSTMAmbs);
-    marker.addTo(map);
+    L.marker(coordinates, { icon: myIcon_Purple })
+      .bindPopup(popupContent)
+      .addTo(STMLayer); 
   }
-};
+}
 
-//Loop through the EU Space AMBASSADORS and add markers to the cluster group
+// EU SPACE AMBASSADORS
 for (let i = 0; i < EUSAmbs.length; i++) {
   const EUSAmb = EUSAmbs[i];
   const coordinates = EUSAmb.Coordinates.split(',').map(coord => parseFloat(coord.trim()));
 
-  if (!isNaN(coordinates[0]) && !isNaN(coordinates[1])) {
-    let popupContentEUSAmbs;
-    
-    //Build popup content 
-    popupContentEUSAmbs = `
-    <strong>${EUSAmb.Name}</strong><br>
+  if (!isNaN(coordinates[0])) {
+    let popupContent = `
+      <strong>${EUSAmb.Name}</strong><br>
       Primary contact: ${EUSAmb.Contact}<br>
       Email: <a href="mailto:${EUSAmb.Email}">${EUSAmb.Email}</a><br>`;
+    if (EUSAmb.Link) popupContent += `<a href="${EUSAmb.Link}" target="_blank">More info</a>`;
 
-    //Add link only if academy.Link has a value
-    if (EUSAmb.Link) {
-      popupContentEUSAmbs += ` <a href="${EUSAmb.Link}" target="_blank">More info</a>`;
-    }
-
-    const marker = L.marker(coordinates, { icon: myIcon_Blue, iconSize: [10, 50]});
-    marker.bindPopup(popupContentEUSAmbs);
-    marker.addTo(map);
+    L.marker(coordinates, { icon: myIcon_LightBlue })
+      .bindPopup(popupContent)
+      .addTo(EUSLayer);   
   }
-};
-  
-//Legend
+}
 
+// Legend
 const legend = L.control({ position: 'topright' });
-legend.onAdd = function (map) {
+legend.onAdd = function () {
   const div = L.DomUtil.create('div', 'legend-card');
-
-  div.innerHTML += `
-    <div class="legend-row">
-      <span class="legend-icon" style="background-image:url('Red.svg');"></span>
-      EU Space Support Office
-    </div>
-    <div class="legend-row">
-      <span class="legend-icon" style="background-image:url('Orange.svg');"></span>
-      Copernicus Ambassadors
-    </div>
-    <div class="legend-row">
-      <span class="legend-icon" style="background-image:url('Blue.svg');"></span>
-      Galileo/EGNOS Ambassadors
-    </div>
-    <div class="legend-row">
-      <span class="legend-icon" style="background-image:url('Purple.svg');"></span>
-      SSA/STM Ambassadors
-    </div>
-    <div class="legend-row">
-      <span class="legend-icon" style="background-image:url('Blue.svg');"></span>
-      EU Space Ambassadors
-    </div>
+  div.innerHTML = `
+    <div class="legend-row"><span class="legend-icon" style="background-image:url('Red.svg');"></span> EU Space Support Office</div>
+    <div class="legend-row"><span class="legend-icon" style="background-image:url('Orange.svg');"></span> Copernicus Ambassadors</div>
+    <div class="legend-row"><span class="legend-icon" style="background-image:url('Blue.svg');"></span> Galileo/EGNOS Ambassadors</div>
+    <div class="legend-row"><span class="legend-icon" style="background-image:url('Purple.svg');"></span> SSA/STM Ambassadors</div>
+    <div class="legend-row"><span class="legend-icon" style="background-image:url('Blue.svg');"></span> EU Space Ambassadors</div>
   `;
-
   return div;
 };
 legend.addTo(map);
 
-
-// EUSSO marker layer
+// EU SUPPORT OFFICE MARKER
 const EUSSOLayer = L.layerGroup().addTo(map);
-//Standalone popup for EUSSO
 const brusselsCoordinates = [50.8403436233206, 4.384885539104331];
-const brusselsPopupContent = `
+const brusselsPopup = `
   <strong>EU Space Support Office</strong><br>
-  Email: <a href="mailto:support@euspace-programme.eu">support@euspace-programme.eu<br>
-  <a href="https://www.copernicus.eu/en">More info`
-const brusselsMarker = L.marker(brusselsCoordinates, {icon: myIcon_Red}).bindPopup(brusselsPopupContent).addTo(EUSSOLayer);
+  Email: <a href="mailto:support@euspace-programme.eu">support@euspace-programme.eu</a><br>
+  <a href="https://www.copernicus.eu/en" target="_blank">More info</a>
+`;
+L.marker(brusselsCoordinates, {icon: myIcon_Red})
+  .bindPopup(brusselsPopup)
+  .addTo(EUSSOLayer);
 
+// FILTER CHECKBOXES
+function updateMarkers() {
+  CopAmbsCheckbox.checked ? map.addLayer(CopLayer) : map.removeLayer(CopLayer);
+  GalAmbsCheckbox.checked ? map.addLayer(GalLayer) : map.removeLayer(GalLayer);
+  STMAmbsCheckbox.checked ? map.addLayer(STMLayer) : map.removeLayer(STMLayer);
+  EUSAmbsCheckbox.checked ? map.addLayer(EUSLayer) : map.removeLayer(EUSLayer);
+}
 
-// Filter checkboxes
-const CopAmbsCheckbox = document.getElementById('CopAmbsCheckbox');
 CopAmbsCheckbox.addEventListener('change', updateMarkers);
-
-const GalAmbsCheckbox = document.getElementById('GalAmbsCheckbox');
 GalAmbsCheckbox.addEventListener('change', updateMarkers);
-
-const STMAmbsCheckbox = document.getElementById('STMAmbsCheckbox');
 STMAmbsCheckbox.addEventListener('change', updateMarkers);
-
-const EUSAmbsCheckbox = document.getElementById('EUSAmbsCheckbox');
 EUSAmbsCheckbox.addEventListener('change', updateMarkers);
 
-function updateMarkers() {
-  map.eachLayer(function (layer) {
-        if (layer instanceof L.Marker && layer !== EUSSOLayer.getLayers()[0]) {
-          map.removeLayer(layer);
-        }
-      });
-
-  // Add copAmb markers if the checkbox is checked
-  if (CopAmbsCheckbox.checked) {
-    for (let i = 0; i < CopAmbs.length; i++) {
-      const copAmb = CopAmbs[i];
-      const coordinates = copAmb.Coordinates.split(',').map(coord => parseFloat(coord.trim()));
-
-      if (!isNaN(coordinates[0]) && !isNaN(coordinates[1])) {
-        let popupContentCopAmbs = `
-        <strong>${copAmb.Name}</strong><br>
-        Primary contact: ${copAmb.Contact}<br>
-        Email: <a href="mailto:${copAmb.Email}">${copAmb.Email}</a><br>`;
-      //Add link only if academy.Link has a value
-      if (copAmb.Link) {
-          popupContentCopAmbs += ` <a href="${copAmb.Link}" target="_blank">More info</a>`;
-        }
-        
-    const marker = L.marker(coordinates, { icon: myIcon_Orange });
-    marker.bindPopup(popupContentCopAmbs);
-    marker.addTo(map);
-    }
-      }
-    }
-
-  // Add galAmb markers if the checkbox is checked
-  if (GalAmbsCheckbox.checked) {
-    for (let i = 0; i < GalAmbs.length; i++) {
-      const galAmb = GalAmbs[i];
-      const coordinates = galAmb.Coordinates.split(',').map(coord => parseFloat(coord.trim()));
-
-      if (!isNaN(coordinates[0]) && !isNaN(coordinates[1])) {
-        let popupContentGalAmbs = `
-        <strong>${galAmb.Name}</strong><br>
-        Primary contact: ${galAmb.Contact}<br>
-        Email: <a href="mailto:${galAmb.Email}">${galAmb.Email}</a><br>`;
-      //Add link only if academy.Link has a value
-      if (galAmb.Link) {
-          popupContentGalAmbs += ` <a href="${galAmb.Link}" target="_blank">More info</a>`;
-        }
-        
-    const marker = L.marker(coordinates, { icon: myIcon_Blue });
-    marker.bindPopup(popupContentGalAmbs);
-    marker.addTo(map);
-    }
-      }
-    }
-
-  // Add stmAmb markers if the checkbox is checked
-  if (STMAmbsCheckbox.checked) {
-    for (let i = 0; i < STMAmbs.length; i++) {
-      const stmAmb = STMAmbs[i];
-      const coordinates = stmAmb.Coordinates.split(',').map(coord => parseFloat(coord.trim()));
-
-      if (!isNaN(coordinates[0]) && !isNaN(coordinates[1])) {
-        let popupContentSTMAmbs = `
-        <strong>${stmAmb.Name}</strong><br>
-        Primary contact: ${stmAmb.Contact}<br>
-        Email: <a href="mailto:${stmAmb.Email}">${stmAmb.Email}</a><br>`;
-      //Add link only if academy.Link has a value
-      if (stmAmb.Link) {
-          popupContentSTMAmbs += ` <a href="${stmAmb.Link}" target="_blank">More info</a>`;
-        }
-        
-    const marker = L.marker(coordinates, { icon: myIcon_Purple });
-    marker.bindPopup(popupContentSTMAmbs);
-    marker.addTo(map);
-    }
-      }
-    }
-
-    // Add EUSAmb markers if the checkbox is checked
-  if (EUSAmbsCheckbox.checked) {
-    for (let i = 0; i < EUSAmbs.length; i++) {
-      const EUSAmb = EUSAmbs[i];
-      const coordinates = EUSAmb.Coordinates.split(',').map(coord => parseFloat(coord.trim()));
-
-      if (!isNaN(coordinates[0]) && !isNaN(coordinates[1])) {
-        let popupContentEUSAmbs = `
-        <strong>${EUSAmb.Name}</strong><br>
-        Primary contact: ${EUSAmb.Contact}<br>
-        Email: <a href="mailto:${EUSAmb.Email}">${EUSAmb.Email}</a><br>`;
-      //Add link only if academy.Link has a value
-      if (EUSAmb.Link) {
-          popupContentEUSAmbs += ` <a href="${EUSAmb.Link}" target="_blank">More info</a>`;
-        }
-        
-    const marker = L.marker(coordinates, { icon: myIcon_Blue });
-    marker.bindPopup(popupContentEUSAmbs);
-    marker.addTo(map);
-    }
-      }
-    }
-
-  };
-
-// Listen to the zoomend event on the map
-map.on('zoomend', function () {
-    updateMarkerSize();
-});
-
-
-//SANITY CHECK 
-
-//number of Copernicus Ambassadors
-let totalCopAmbs = 0;
-
-for (let i = 0; i < CopAmbs.length; i++) {
-  const copAmb = CopAmbs[i];
-  totalCopAmbs++; 
-}
-console.log("Total Copernicus Ambassadors processed:", totalCopAmbs);
-
-// duplicates Copernicus Ambassadors by Name
-function findDuplicateCopernicusByName(CopAmbs) {
-  const CopAmbsNames = new Set(); // Set to store unique relay names
-  const duplicateCopAmbs = []; // Array to store relays with duplicate names
-
-  for (const copAmb of CopAmbs) {
-    const copAmbName = copAmb.Name; // Extract the Name property
-    if (CopAmbsNames.has(copAmbName)) { // Check if name already exists
-      duplicateCopAmbs.push(copAmb);
-    } else {
-      CopAmbsNames.add(copAmbName); // Add unique name to the Set
-    }
-  }
-
-  if (duplicateCopAmbs.length > 0) {
-    console.log("Duplicate Copernicus Ambassadors (by Name):", duplicateCopAmbs);
-  } else {
-    console.log("No duplicate Copernicus Ambassadors Names found.");
-  }
-}
-findDuplicateCopernicusByName(CopAmbs);
-
-// duplicates Copernicus Ambassadors by Coordinates
-function findDuplicateCopAmbsCoord(CopAmbs) {
-  const copAmbCoords = new Set(); 
-  const duplicateCoordCopAmbs = []; 
-  for (const copAmb of CopAmbs) {
-    const copAmbCoord = copAmb.Coordinates; 
-    if (copAmbCoords.has(copAmbCoord)) { 
-      duplicateCoordCopAmbs.push(copAmb);
-    } else {
-      copAmbCoords.add(copAmbCoord); 
-    }
-  }
-
-  if (duplicateCoordCopAmbs.length > 0) {
-    console.log("Duplicate Copernicus Ambassadors Coordinates:", duplicateCoordCopAmbs);
-  } else {
-    console.log("No duplicate Copernicus Ambassadors Coordinates found.");
-  }
-}
-findDuplicateCopAmbsCoord(CopAmbs);
-
-
-
-
+map.on('zoomend', updateMarkerSize);
 </script>
 </body>
-
 </html>
-
-
-
-
