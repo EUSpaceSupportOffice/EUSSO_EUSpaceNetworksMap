@@ -1,4 +1,4 @@
-  const GalAmbs = [
+  const EUSAmbs = [
     {
       "Name": "PROVA",
       "Address": "provamockup",
@@ -10,7 +10,8 @@
 
     ];
 
-    exports =GalAmbs;
+    exports =EUSAmbs;
+
 
 
 
