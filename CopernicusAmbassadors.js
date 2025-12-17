@@ -2733,12 +2733,21 @@
         "Address": "Immeuble X, 8 Al Baraka, Complexe Al Ghorfa, Avenue Hassan 1 – Temara (Rabat), Morocco",
         "Coordinates": "33.898439830954324, -6.919803084654569",
         "Contact": "Ouafae Karim",
-        "Email": "ouafae.karim@afeos.ma ",
+        "Email": "ouafae.karim@afeos.ma",
         "Link": "https://afeos.ma/fr"
+       },
+    {
+        "Name": "The Southern African Science Service Centre for Climate Change and Adaptive Land Management (SASSCAL)",
+        "Address": "",
+        "Coordinates": "",
+        "Contact": "Albano Santos",
+        "Email": " albano.dossantos@sasscal.org",
+        "Link": "https://sasscal.org/"
     }
     ];
 
     exports =CopAmbs;
+
 
 
 
