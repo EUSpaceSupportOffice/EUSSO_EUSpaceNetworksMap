@@ -2738,8 +2738,8 @@
        },
     {
         "Name": "The Southern African Science Service Centre for Climate Change and Adaptive Land Management (SASSCAL)",
-        "Address": "",
-        "Coordinates": "",
+        "Address": "28 Robert Mugabe Ave, Windhoek, Namibia",
+        "Coordinates": "-22.578466781771752, 17.09242141031931",
         "Contact": "Albano Santos",
         "Email": " albano.dossantos@sasscal.org",
         "Link": "https://sasscal.org/"
@@ -2747,6 +2747,7 @@
     ];
 
     exports =CopAmbs;
+
 
 
 
