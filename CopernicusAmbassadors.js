@@ -121,7 +121,7 @@
     },
     {
       "Name": "University of Chile  - Seismic Risk Programme [Member of the Copernicus Chile Relay Coalition]",
-      "Address": "Beauchef 850, Santiago , Chile",
+      "Address": "Beauchef 850, Santiago, Chile",
       "Coordinates": "-33.446111, -70.639167",
       "Contact": "Florencio Utreras",
       "Email": "futreras@dim.uchile.cl",
@@ -2739,6 +2739,7 @@
     ];
 
     exports =CopAmbs;
+
 
 
 
