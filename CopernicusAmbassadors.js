@@ -352,14 +352,6 @@
       "Link": "https://www.pixstart.io/"
     },
     {
-      "Name": "Pole Mer Bretagne Atlantique (MORESPACE Consortium)",
-      "Address": "525 AV Alexis de Rochon, 29280 Plouzane, France",
-      "Coordinates": "48.35851103198023, -4.56329450243905",
-      "Contact": "Sophie Cordillet",
-      "Email": "Sophie.CORDILLET@polemer-ba.com",
-      "Link": "https://www.pole-mer-bretagne-atlantique.com/fr/"
-    },
-    {
       "Name": "SAFE Cluster (PEGASE Association)",
       "Address": "AV Louis Philibert Aix-en-Provence, France",
       "Coordinates": "43.529444, 5.447222",
@@ -2739,6 +2731,7 @@
     ];
 
     exports =CopAmbs;
+
 
 
 
