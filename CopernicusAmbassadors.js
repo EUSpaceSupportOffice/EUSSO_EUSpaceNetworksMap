@@ -1361,14 +1361,6 @@
         "Link": "https://enseirb-matmeca.bordeaux-inp.fr/fr"
     },
     {
-        "Name": "IRISPACE (Institut Régional de l'Innovation Spatiale de Bretagne)",
-        "Address": "IMT Atlantique Bretagne-Pays de la Loire\nCampus de Brest\nTechnopÃ´le Brest-Iroise\nCS 83818\n29238 Brest Cedex 3",
-        "Coordinates": "48.403333, -4.481389",
-        "Contact": "Nicolas Bellec",
-        "Email": "nicolas.bellec@imt-atlantique.fr",
-        "Link": "https://recherche.imt-atlantique.fr/bretel"
-    },
-    {
         "Name": "CNRS - OSU Network CNRS-INSU",
         "Address": "3-5 Rue Michel Ange F-75016 Paris, France",
         "Coordinates": "48.859167, 2.289722",
@@ -2747,6 +2739,7 @@
     ];
 
     exports =CopAmbs;
+
 
 
 
