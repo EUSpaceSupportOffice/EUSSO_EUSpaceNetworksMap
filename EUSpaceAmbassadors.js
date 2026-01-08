@@ -16,6 +16,14 @@
       "Link": "https://www.pole-mer-bretagne-atlantique.com/en/booster-morespace"
     },
     {
+      "Name": "IRISPACE (Regional Institute for Space Innovation in Brittany) - IMT Atlantique",
+        "Address": "655 Av. du Technopôle, 29280 Plouzané, France",
+        "Coordinates": "48.3588370840803, -4.5714668496428019",
+        "Contact": "Nicolas Bellec",
+        "Email": "nicolas.bellec@imt-atlantique.fr",
+        "Link": "https://irispace.fr/"
+    },
+    { 
       "Name": "University of Luxembourg",
       "Address": "2 Av. de l'Universite L, 4365 Esch-sur-Alzette Luxembourg",
       "Coordinates": "49.50426654529269, 5.949402868955214",
@@ -26,6 +34,7 @@
     ];
 
     exports =EUSAmbs;
+
 
 
 
