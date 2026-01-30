@@ -659,8 +659,8 @@
       "Name": "Ministry of Economics of the Republic of Latvia",
       "Address": "55 Brivibas iela Riga 1010, Latvia",
       "Coordinates": "56.948889, 24.106389",
-      "Contact": "Angelina  Bekasova",
-      "Email": "Angelina.Bekasova@em.gov.lv",
+      "Contact": "Vladislavs Konstantinovs",
+      "Email": "Vladislavs.Konstantinovs@em.gov.lv",
       "Link": "https://www.em.gov.lv/en"
     },
     {
@@ -2731,6 +2731,7 @@
     ];
 
     exports =CopAmbs;
+
 
 
 
