@@ -388,7 +388,7 @@
       "Address": "Friedrichshafener StraÃŸe 1  D-82205 Gilching",
       "Coordinates": "48.155278, 11.323333",
       "Contact": "Baerbel Deisting",
-      "Email": "deisting@bavAIRia.net",
+      "Email": "dobreva-nielsen@bavAIRia.net
       "Link": "https://www.bavairia.net/"
     },
     {
@@ -2731,6 +2731,7 @@
     ];
 
     exports =CopAmbs;
+
 
 
 
