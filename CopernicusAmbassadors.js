@@ -387,7 +387,7 @@
       "Name": "bavAIRia e.V. (Bavarian Cluster Aerospace)",
       "Address": "Friedrichshafener StraÃŸe 1  D-82205 Gilching",
       "Coordinates": "48.155278, 11.323333",
-      "Contact": "Baerbel Deisting",
+      "Contact": "Daniela Dobreva-Nielsen",
       "Email": "dobreva-nielsen@bavAIRia.net", 
       "Link": "https://www.bavairia.net/"
     },
@@ -2731,6 +2731,7 @@
     ];
 
     exports =CopAmbs;
+
 
 
 
