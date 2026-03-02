@@ -8,6 +8,14 @@
       "Link": "www.aerospace-valley.com"
     },
     {
+      "Name": "SAFE Cluster",
+      "Address": "1047 route des dolines - Business pole 1, 06560 Sophia Antipolis, France",
+      "Coordinates": "43.62713122749743, 7.040777225240438",
+      "Contact": "Loïc Chanvillard",
+      "Email": "loic.chanvillard@safecluster.com",
+      "Link": "https://www.safecluster.com/"
+    },
+    {
       "Name": "Pôle Mer Bretagne Atlantique",
       "Address": "525, avenue Alexis de Rochon 29280 Plouzané, France",
       "Coordinates": "48.357792220104734, -4.564087773425103",
@@ -34,6 +42,7 @@
     ];
 
     exports =EUSAmbs;
+
 
 
 
