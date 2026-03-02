@@ -736,7 +736,7 @@
       "Link": "https://www.nina.no/english/Home"
     },
     {
-      "Name": "SIOS  - Svalbard Integrated Artic Earth Observating System",
+      "Name": "SIOS  - Svalbard Integrated Arctic Earth Observing System",
       "Address": "Vei 2311, 9170 Longyearbyen, Norway",
       "Coordinates": "78.221944, 15.653611",
       "Contact": "Ashley Morris",
@@ -2731,6 +2731,7 @@
     ];
 
     exports =CopAmbs;
+
 
 
 
