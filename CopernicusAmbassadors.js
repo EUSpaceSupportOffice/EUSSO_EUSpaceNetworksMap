@@ -352,12 +352,12 @@
       "Link": "https://www.pixstart.io/"
     },
     {
-      "Name": "SAFE Cluster (PEGASE Association)",
-      "Address": "AV Louis Philibert Aix-en-Provence, France",
-      "Coordinates": "43.529444, 5.447222",
-      "Contact": "Loïc Chanvillard",
-      "Email": "loic.chanvillard@safecluster.com",
-      "Link": "https://www.safecluster.com/"
+      "Name": "CEDIA - Corporacion Ecuatoriana para el desarrollo de la investigación y la academia",
+      "Address": "Gonzalo Cordero Dávila 2-122, Cuenca, Ecuador",
+      "Coordinates": "-2.9063786070819893, -79.01095097942927",
+      "Contact": "Javier Valdiviezo",
+      "Email": "javier.valdiviezo@cedia.org.ec",
+      "Link": "https://cedia.edu.ec/"
     },
     {
       "Name": "TerraNIS",
@@ -2731,6 +2731,7 @@
     ];
 
     exports =CopAmbs;
+
 
 
 
