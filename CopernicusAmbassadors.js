@@ -72,6 +72,14 @@
       "Link": "https://verhaert.com/"
     },
     {
+      "Name": "CRIAR Space Systems",
+      "Address": "R. da Redenção, 36 - Jardim Mosteiro, Ribeirão Preto - SP, 14085-370, Brazil",
+      "Coordinates": "-21.174902531629144, -47.79877403204007",
+      "Contact": "Sergio de Silva Soares",
+      "Email": "contato@criar.space",
+      "Link": "https://criar.space/site/"
+    },
+    {
       "Name": "Active historical map  Spatium.bg",
       "Address": "42 Alabin, Sofia, Bulgaria",
       "Coordinates": "42.697389, 23.324222",
