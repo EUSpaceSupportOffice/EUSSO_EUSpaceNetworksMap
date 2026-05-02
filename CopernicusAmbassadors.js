@@ -1364,8 +1364,8 @@
         "Name": "AgroParisTech - Institut des Sciences et Industries du Vivant et de l'Environnement",
         "Address": "648 r Jean FranÃ§ois Breton, 34090 Montpellier, France",
         "Coordinates": "43.606389, 3.877500",
-        "Contact": "Pierre-Yves Vion",
-        "Email": "pierre-yves.vion@agroparistech.fr",
+        "Contact": "Frédéric 	Portet",
+        "Email": "frederic.portet@agroparistech.fr",
         "Link": "https://www.agroparistech.fr/"
     },
     {
