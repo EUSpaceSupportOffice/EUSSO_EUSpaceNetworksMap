@@ -2677,7 +2677,7 @@
         "Address": "İlkadım, Yeşil Vadi Caddesi No: 45, 06450 Çankaya/Ankara, Türkiye",
         "Coordinates": "39.89092, 32.84323",
         "Contact": "Sultan Kocaman Gokceoglu",
-        "Email": "sukocaman@gmail.com",
+        "Email": "sultan@geoplato.com",
         "Link": "https://www.geoplato.com/"
     },
     {
