@@ -8,6 +8,22 @@
       "Link": ""
     },
     {
+      "Name": "Instituto Centroamericano de Administración Pública (ICAP)",
+      "Address": "10025 - 1000, San José, Curridabat, 11111, Costa Rica",
+      "Coordinates": "9.926477686325338, -84.04172206566696",
+      "Contact": "Edgar Balsells Conde",
+      "Email": "edgar.balsells@icap.ac.cr",
+      "Link": "https://icap.ac.cr/"
+    },
+    {
+      "Name": "National High Technology Center (CeNAT)-PRIAS – Earth Observation, Remote Sensing and Geomatics Laboratory",
+      "Address": "Dr. Franklin Chang Diaz Building, 1174-1200 Calle, C. Alexander Humboldt, San José, 10109",
+      "Coordinates": "9.951095967121333, -84.12454516930887",
+      "Contact": "Gabriela Chaves Soto",
+      "Email": "gchaves@cenat.ac.cr",
+      "Link": "https://www.cenat.ac.cr/en/"
+    },
+    {
       "Name": "State Authority for Geospatial Information (ASIG)",
       "Address": "Rruga Papa Gjon Pali IINd. 2, H. 3, 1010, Tirana«, Albania",
       "Coordinates": "41.327544, 19.818653",
