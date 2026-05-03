@@ -1385,12 +1385,12 @@
         "Link": "https://www.insu.cnrs.fr/en/observatories-sciences-universe-osu"
     },
     {
-        "Name": "Ecole Nationale des Sciences Geographiques (ENSG)",
+        "Name": "Géodata Paris (Ex ENSG) ",
         "Address": "6-8 AV Blaise Pascal, 77420 Champs-sur-Marne, France",
         "Coordinates": "48.852778, 2.552222",
-        "Contact": "Marc Poupee",
-        "Email": "marc.poupee@ensg.eu",
-        "Link": "https://ensg.eu/fr"
+        "Contact": "Marc Poupée",
+        "Email": "Marc.poupee@geodata-paris.fr",
+        "Link": "https://geodata-paris.fr/fr"
     },
     {
         "Name": "Eurisy",
