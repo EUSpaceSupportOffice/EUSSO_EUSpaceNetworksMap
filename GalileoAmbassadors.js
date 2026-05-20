@@ -8,6 +8,14 @@
       "Link": "http://www.polito.it"
     },
     {
+      "Name": "COSMIC Program - University Corporation for Atmospheric Research (UCAR)",
+      "Address": "P.O. Box 3000 80307-0000 Boulder United States",
+      "Coordinates": "39.99045813556258, -105.23974279872397",
+      "Contact": "John Braun",
+      "Email": "braunj@ucar.edu",
+      "Link": "https://www.cosmic.ucar.edu/"
+    },
+    {
       "Name": "University of Michigan Space Institute",
       "Address": "2455 Hayward St, 48109 Hayward St, United States",
       "Coordinates": "42.29448036809762, -83.71150387393469",
