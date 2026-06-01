@@ -1,5 +1,21 @@
   const CopAmbs = [
    {
+      "Name": "Alta Scuola",
+      "Address": "P.zza Italia, 1 06121, Perugia, Italy",
+      "Coordinates": "43.10938808619503, 12.38812351099896",
+      "Contact": "Giovanni Selli",
+      "Email": "presidente@altascuola.org",
+      "Link": "https://www.altascuola.org/"
+    },
+    {
+      "Name": "ART-ER",
+      "Address": "Via P. Gobetti, 101 41121, Bologna, Italy",
+      "Coordinates": "44.522799907728405, 11.338727026404404",
+      "Contact": "Lorenzo Calabri",
+      "Email": "lorenzo.calabri@art.er.it",
+      "Link": "http://www.art-er.it/"
+    },
+    {
       "Name": "Manuel Davila Sguerra",
       "Address": "Calle 129C Nro 57A-50\n 11001000 Bogota DC\n Colombia",
       "Coordinates": "4.71927005286428, -74.06752152211935",
@@ -720,7 +736,7 @@
       "Link": "https://www.list.lu/"
     },
     {
-      "Name": "MCST (Malta Council for Science and Technology)",
+      "Name": "MCST (MCouncil for Science and Technology)",
       "Address": "Villa Bighi, Dawret Fra Giovanni Bichi, Il-Kalkara, Malta",
       "Coordinates": "35.883333, 14.527778",
       "Contact": "Elaine Sciberras",
