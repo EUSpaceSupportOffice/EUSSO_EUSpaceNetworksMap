@@ -2396,9 +2396,9 @@
         "Name": "Pavol Jozef Safarik University",
         "Address": "Srobarova 1014/2 04001 Kosice, Slovakia",
         "Coordinates": "48.713333, 21.253056",
-        "Contact": "Pavol Sovak",
-        "Email": "rektor@upjs.sk",
-        "Link": "https://www.upjs.sk/en/"
+        "Contact": "Katarina Onacillova",
+        "Email": "katarina.onacillova@upjs.sk",
+        "Link": "https://uge.science.upjs.sk/"
     },
     {
         "Name": "Faculty of Mining, Ecology, Process Control and Geotechnologies, Technical University of Kosice",
