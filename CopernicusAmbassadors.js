@@ -8,6 +8,14 @@
       "Link": "https://www.stir.ac.uk/"
     },
     {
+      "Name": "Natural Science Institute of Iceland - Náttúrufræðistofnun",
+      "Address": "Smiðjuvellir 28, 300 Akranes, Iceland",
+      "Coordinates": "64.32676875156852, -22.057268118113125",
+      "Contact": "Marco Pizzolato",
+      "Email": "marco.pizzolato@natt.is",
+      "Link": "https://www.natt.is/en"
+    },
+    {
       "Name": "Alta Scuola",
       "Address": "P.zza Italia, 1 06121, Perugia, Italy",
       "Coordinates": "43.10938808619503, 12.38812351099896",
