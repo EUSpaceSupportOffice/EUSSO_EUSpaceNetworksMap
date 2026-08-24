@@ -1170,10 +1170,10 @@
     },
     {
         "Name": "Corporacion Red Nacional Academica de Tecnologi­a Avanzada-Renata",
-        "Address": "Calle 73 7 31 P 2 To B, Bogota, Bogota",
-        "Coordinates": "4.663889, -74.082222",
-        "Contact": "Monica Maria Lopez Sanchez",
-        "Email": "m.lopez@renata.edu.co",
+        "Address": "Cl. 98 #21 50, Bogotá, Colombia",
+        "Coordinates": "4.685802146128312, -74.05530154662226",
+        "Contact": "Mateo Sánchez Ospina",
+        "Email": "m.sanchez@renata.edu.co",
         "Link": "https://www.renata.edu.co/"
     },
     {
