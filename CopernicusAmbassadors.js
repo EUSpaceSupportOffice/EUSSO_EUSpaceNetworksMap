@@ -2268,8 +2268,8 @@
         "Name": "University of Bergen - Geography Department",
         "Address": "Postboks 7802 - NO-5020 BERGEN, NORWAY",
         "Coordinates": "60.387903606448205, 5.321777463989298",
-        "Contact": "Olena Dubovyk",
-        "Email": "olena.dubovyk@uib.no",
+        "Contact": "Gidske Andersen",
+        "Email": "Gidske.Andersen@uib.no",
         "Link": "https://www.uib.no/en/geografi"
     },
     {
