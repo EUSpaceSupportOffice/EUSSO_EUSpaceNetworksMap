@@ -16,6 +16,14 @@
       "Link": "https://www.natt.is/en"
     },
     {
+       "Name": "Centro de Información de Recursos Naturales (CIREN)",
+      "Address": "Manuel Montt 1164, Providencia, Región Metropolitana, Chile",
+      "Coordinates": "-33.4384770258728, -70.6147847562668",
+      "Contact": "Jose Ossa",
+      "Email": "jossa@ciren.cl",
+      "Link": "https://www.ciren.cl/"
+    },
+    {
       "Name": "Alta Scuola",
       "Address": "P.zza Italia, 1 06121, Perugia, Italy",
       "Coordinates": "43.10938808619503, 12.38812351099896",
