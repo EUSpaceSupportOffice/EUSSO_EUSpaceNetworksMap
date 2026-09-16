@@ -1465,14 +1465,6 @@
         "Link": "https://www.isae-supaero.fr/fr/"
     },
     {
-        "Name": "International Space University",
-        "Address": "1 Illkirch-Graffenstaden, France",
-        "Coordinates": "48.580833, 7.743611",
-        "Contact": "Danijela Stupar",
-        "Email": "danijela.stupar@isunet.edu",
-        "Link": "https://www.isunet.edu/"
-    },
-    {
         "Name": "La Cite de l'Espace (SEMECCEL)",
         "Address": "Avenue Jean Gonord, 31500 Toulouse, France",
         "Coordinates": "43.575278, 1.462222",
