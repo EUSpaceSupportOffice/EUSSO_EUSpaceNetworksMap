@@ -32,6 +32,14 @@
         "Link": "https://irispace.fr/"
     },
     { 
+       "Name": "Space Y",
+        "Address": "10 Cours Louis Lumière - 94300 Vincennes, France",
+        "Coordinates": "48.8431967411033, 2.42986444008816",
+        "Contact": "Olga Flamion Kaminska",
+        "Email": "olga.flamion.kaminska@spacey.eu.com",
+        "Link": "https://www.spacey.eu.com/"
+    },
+    { 
       "Name": "University of Luxembourg",
       "Address": "2 Av. de l'Universite L, 4365 Esch-sur-Alzette Luxembourg",
       "Coordinates": "49.50426654529269, 5.949402868955214",
