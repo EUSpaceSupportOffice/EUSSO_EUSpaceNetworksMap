@@ -25,27 +25,27 @@
     },
     {
       "Name": "IRISPACE (Regional Institute for Space Innovation in Brittany) - IMT Atlantique",
-        "Address": "655 Av. du Technopôle, 29280 Plouzané, France",
-        "Coordinates": "48.3588370840803, -4.5714668496428019",
-        "Contact": "Nicolas Bellec",
-        "Email": "nicolas.bellec@imt-atlantique.fr",
-        "Link": "https://irispace.fr/"
+      "Address": "655 Av. du Technopôle, 29280 Plouzané, France",
+      "Coordinates": "48.3588370840803, -4.5714668496428019",
+      "Contact": "Nicolas Bellec",
+      "Email": "nicolas.bellec@imt-atlantique.fr",
+      "Link": "https://irispace.fr/"
     },
     { 
-       "Name": "Space Y",
-        "Address": "10 Cours Louis Lumière - 94300 Vincennes, France",
-        "Coordinates": "48.8431967411033, 2.42986444008816",
-        "Contact": "Olga Flamion Kaminska",
-        "Email": "olga.flamion.kaminska@spacey.eu.com",
-        "Link": "https://www.spacey.eu.com/"
+      "Name": "Space Y",
+      "Address": "10 Cours Louis Lumière - 94300 Vincennes, France",
+      "Coordinates": "48.8431967411033, 2.42986444008816",
+      "Contact": "Olga Flamion Kaminska",
+      "Email": "olga.flamion.kaminska@spacey.eu.com",
+      "Link": "https://www.spacey.eu.com/"
     },
     { 
       "Name": "Reuniwatt",
-        "14 Rue de la Guadeloupe, Saint-Denis 97490, Réunion",
-        "Coordinates": "-20.90025706036811, 55.49383038754671",
-        "Contact": "Alan Mandrillon",
-        "Email": "alan.mandrillon@reuniwatt.com",
-        "Link": "https://reuniwatt.com/en/"
+      "14 Rue de la Guadeloupe, Saint-Denis 97490, Réunion",
+      "Coordinates": "-20.90025706036811, 55.49383038754671",
+      "Contact": "Alan Mandrillon",
+      "Email": "alan.mandrillon@reuniwatt.com",
+      "Link": "https://reuniwatt.com/en/"
     },
     { 
       "Name": "University of Luxembourg",
