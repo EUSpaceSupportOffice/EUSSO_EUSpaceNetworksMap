@@ -43,8 +43,8 @@
       "Name": "Reuniwatt",
       "14 Rue de la Guadeloupe, Saint-Denis 97490, Réunion",
       "Coordinates": "-20.90025706036811, 55.49383038754671",
-      "Contact": "Alan Mandrillon",
-      "Email": "alan.mandrillon@reuniwatt.com",
+      "Contact": "Jeanne Tambon",
+      "Email": "jeanne.tambon@reuniwatt.com",
       "Link": "https://reuniwatt.com/en/"
     },
     { 
