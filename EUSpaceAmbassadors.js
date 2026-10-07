@@ -40,6 +40,14 @@
       "Link": "https://www.spacey.eu.com/"
     },
     { 
+      "Name": "Reuniwatt",
+      "Address": "14, rue de la Guadeloupe - 97490 Sainte-Clotilde, Réunion",
+      "Coordinates": "-20.90342219915341, 55.494788354463026",
+      "Contact": "Jeanne Tambon",
+      "Email": "jeanne.tambon@reuniwatt.com",
+      "Link": "https://reuniwatt.com/en/"
+    },
+    {
       "Name": "University of Luxembourg",
       "Address": "2 Av. de l'Universite L, 4365 Esch-sur-Alzette Luxembourg",
       "Coordinates": "49.50426654529269, 5.949402868955214",
