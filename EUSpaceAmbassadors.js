@@ -40,14 +40,6 @@
       "Link": "https://www.spacey.eu.com/"
     },
     { 
-      "Name": "Reuniwatt",
-      "14 Rue de la Guadeloupe, Saint-Denis 97490, Réunion",
-      "Coordinates": "-20.90025706036811, 55.49383038754671",
-      "Contact": "Jeanne Tambon",
-      "Email": "jeanne.tambon@reuniwatt.com",
-      "Link": "https://reuniwatt.com/en/"
-    },
-    { 
       "Name": "University of Luxembourg",
       "Address": "2 Av. de l'Universite L, 4365 Esch-sur-Alzette Luxembourg",
       "Coordinates": "49.50426654529269, 5.949402868955214",
