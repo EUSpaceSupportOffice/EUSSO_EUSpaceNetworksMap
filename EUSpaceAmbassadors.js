@@ -48,6 +48,14 @@
       "Link": "https://reuniwatt.com/en/"
     },
     {
+       "Name": "Political Sciences Department, University of Pisa",
+      "Address": "Via Filippo Serafini, 3, 56126 Pisa PI, Italy",
+      "Coordinates": "43.71678436138328, 10.399102733440834",
+      "Contact": "Claudia Cinelli",
+      "Email": "claudia.cinelli@unipi.it",
+      "Link": "https://euspil.sp.unipi.it/"
+    },
+    {
        "Name": "Institute of Geomatics and Geospatial Infrastructure (IGGI) - University of Prishtina",
       "Address": "Str. Agim Ramadani, Technical Faculties Building, 10 000 Prishtinë, Republic of Kosovo",
       "Coordinates": "42.64887747516381, 21.1671506974885",
