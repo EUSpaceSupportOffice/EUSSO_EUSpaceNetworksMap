@@ -48,6 +48,14 @@
       "Link": "https://reuniwatt.com/en/"
     },
     {
+       "Name": "Institute of Geomatics and Geospatial Infrastructure (IGGI) - University of Prishtina",
+      "Address": "Str. Agim Ramadani, Technical Faculties Building, 10 000 Prishtinë, Republic of Kosovo",
+      "Coordinates": "42.64887747516381, 21.1671506974885",
+      "Contact": "Perparim Ameti",
+      "Email": "perparim.ameti@uni-pr.edu",
+      "Link": "https://www.iggi-up.org/"
+    },
+    {
       "Name": "University of Luxembourg",
       "Address": "2 Av. de l'Universite L, 4365 Esch-sur-Alzette Luxembourg",
       "Coordinates": "49.50426654529269, 5.949402868955214",
