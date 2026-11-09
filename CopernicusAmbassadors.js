@@ -800,6 +800,14 @@
       "Link": "https://www.nina.no/english/Home"
     },
     {
+      "Name": "Norwegian Institute of Bioeconomy research (NIBIO)",
+      "Address": "Høgskoleveien 7, 1433 Ås, Norway",
+      "Coordinates": "59.66658025630697, 10.774246733358732",
+      "Contact": "Jonathan Rizzi",
+      "Email": "jonathan.rizzi@nibio.no",
+      "Link": "https://www.nibio.no/en"
+    },
+    {
       "Name": "SIOS  - Svalbard Integrated Arctic Earth Observing System",
       "Address": "Vei 2311, 9170 Longyearbyen, Norway",
       "Coordinates": "78.221944, 15.653611",
@@ -2546,7 +2554,7 @@
     },
     {
         "Name": "Universitat de Girona (UdG) - Geographical Information Systems and Remote Sensing Service (SIGTE)",
-        "Address": "Santo Domingo sq, 3 Les Aguiles Buidling, 17004, Girona (Girona), Spain",
+        "Address": "Santo Domingo sq, 3 Les Aguiles Building, 17004, Girona (Girona), Spain",
         "Coordinates": "41.983333, 2.823056",
         "Contact": "Josep Sitjar Suner",
         "Email": "josep.sitjar@udg.edu",
