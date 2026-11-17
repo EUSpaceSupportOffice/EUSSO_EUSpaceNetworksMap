@@ -2797,8 +2797,96 @@
         "Address": "28 Robert Mugabe Ave, Windhoek, Namibia",
         "Coordinates": "-22.578466781771752, 17.09242141031931",
         "Contact": "Albano Santos",
-        "Email": " albano.dossantos@sasscal.org",
+        "Email": "albano.dossantos@sasscal.org",
         "Link": "https://sasscal.org/"
+    },
+     {
+        "Name": "University Eduardo Mondlane",
+        "Address": "Av. Julius Nyerere, nr. 3453 Maputo – Moçambique",
+        "Coordinates": "-25.951966485255905, 32.60352790985727",
+        "Contact": "Paolo Covele",
+        "Email": "pcovele@gmail.com",
+        "Link": "https://uem.mz/en/home-english/"
+    },
+    {
+        "Name": "University of Lagos",
+        "Address": "University of Lagos, University Road Lagos Mainland Akoka, Yaba, Lagos, Nigeria",
+        "Coordinates": "6.516046800845059, 3.3898876111773557",
+        "Contact": "Isa Elegbede",
+        "Email": "isaelegbede@gmail.com",
+        "Link": "https://unilag.edu.ng/"
+    },
+    {
+        "Name": "University of Rwanda",
+        "Address": "3 KN 7 Ave, Kigali, Rwanda",
+        "Coordinates": "-1.958482909924655, 30.064323088363867",
+        "Contact": "Fidele Mwizerwa",
+        "Email": "mwizerwaf@gmail.com",
+        "Link": "https://ur.ac.rw/"
+    },
+    {
+        "Name": "Sokoine University of Agriculture",
+        "Address": "P.O. Box 3000, Chuo Kikuu, Morogoro, Tanzania",
+        "Coordinates": "-6.85025737772502, 37.65911582692828",
+        "Contact": "Ernest Mauya",
+        "Email": "ernestmauya@gmail.com",
+        "Link": "https://www.sua.ac.tz/"
+    },
+    {
+        "Name": "CIRAD - Agricultural Research for development",
+        "Address": "42, rue Scheffer, 75116 Paris, France",
+        "Coordinates": "48.8627768821084, 2.281938699116694",
+        "Contact": "Agnès Begue",
+        "Email": "agnes.begue@cirad.fr",
+        "Link": "https://www.cirad.fr/en"
+    },
+    {
+        "Name": "IRD - French National Research Institute for Sustainable Development",
+        "Address": "44, boulevard de Dunkerque, CS 90009, 13572, Marseille, Cedex 20, France",
+        "Coordinates": "43.30972515406323, 5.3694934558438066",
+        "Contact": "Benoit Mertens",
+        "Email": "benoit.mertens@ird.fr",
+        "Link": "https://en.ird.fr/"
+    },
+    {
+        "Name": "University of Vaasa",
+        "Address": "Wolffintie 32, FI-65200 Vaasa PL 700, 65101 Vaasa, Finland",
+        "Coordinates": "63.10487223259564, 21.59197157316398",
+        "Contact": "Ali Nadir Arslan",
+        "Email": "ali.arslan@uwasa.fi",
+        "Link": "https://www.uwasa.fi/en"
+    },
+    {
+        "Name": "Air Centre - Atlantic International Research Centre",
+        "Address": "TERINOV - Parque de Ciencia e Tecnologia, Ilha Terceira, 9700-702 Angra do Heroismo, Portugal",
+        "Coordinates": "38.67331999662427, -27.25018141502308",
+        "Contact": "Catarina Duarte",
+        "Email": "catarina.duarte@aircentre.or",
+        "Link": "https://www.aircentre.org/en"
+    },
+    {
+        "Name": "Portuguese Institute for the Sea and Atmosphere",
+        "Address": "Rua C do Aeroporto, 1749-077 Lisboa, Portugal",
+        "Coordinates": "38.77605924957247, -9.124806208107634",
+        "Contact": "Cristina Ponte Lira",
+        "Email": "cristina.lira@ipma.pt",
+        "Link": "https://www.ipma.pt/en/oipma/quem/ipma/"
+    },
+    {
+        "Name": "CBK PAN",
+        "Address": "Bartycka 18A, 00-716 Warszawa, Poland",
+        "Coordinates": "52.214317523489434, 21.06753597116361",
+        "Contact": "Michal Krupinski",
+        "Email": "mkrupinski@cbk.waw.pl",
+        "Link": "https://cbkpan.pl/en/"
+    },
+    {
+        "Name": "PRAXI",
+        "Address": "Kolokotroni 8, 105 61, Athens, Greece",
+        "Coordinates": "37.97756918988846, 23.731594684101506",
+        "Contact": "Dimitra Tsoutsou",
+        "Email": "tsoutsou@praxinetwork.gr",
+        "Link": "https://praxinetwork.gr/en/home/"
     }
     ];
 
