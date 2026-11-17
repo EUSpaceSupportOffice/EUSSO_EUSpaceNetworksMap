@@ -8,6 +8,14 @@
       "Link": "https://www.stir.ac.uk/"
     },
     {
+      "Name": "CNES - Centre national d'études spatiales (Lead of the Copernicus WG Africa consortium)",
+      "Address": "18, avenue Edouard Belin 31401 Toulouse",
+      "Coordinates": "43.56188178784476, 1.4817108110180313",
+      "Contact": "Linda Tomasini",
+      "Email": "Linda.Tomasini@cnes.fr",
+      "Link": "https://cnes.fr/"
+    },
+    {
       "Name": "Natural Science Institute of Iceland - Náttúrufræðistofnun",
       "Address": "Smiðjuvellir 28, 300 Akranes, Iceland",
       "Coordinates": "64.32676875156852, -22.057268118113125",
