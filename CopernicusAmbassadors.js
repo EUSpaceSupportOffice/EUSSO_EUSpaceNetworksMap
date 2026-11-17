@@ -2833,7 +2833,7 @@
         "Link": "https://www.sua.ac.tz/"
     },
     {
-        "Name": "CIRAD - Agricultural Research for development",
+        "Name": "CIRAD - Agricultural Research for Development",
         "Address": "42, rue Scheffer, 75116 Paris, France",
         "Coordinates": "48.8627768821084, 2.281938699116694",
         "Contact": "Agnès Begue",
