@@ -529,10 +529,10 @@
     },
     {
       "Name": "EurA AG",
-      "Address": "Krämpferstr. 2 Â· 99084 Erfurt, Germany",
-      "Coordinates": "50.975556, 10.981667",
-      "Contact": "Johannes M. Schmidt",
-      "Email": "jm.schmidt@eura-ag.de",
+      "Address": "Westenriederstraße 49, 80331 München-Altstadt-Lehel, Germany",
+      "Coordinates": "48.135236793155606, 11.580843954363546",
+      "Contact": "Bärbel Deisting",
+      "Email": "baerbel.deisting@eura-ag.de",
       "Link": "https://www.eura-ag.com/en/"
     },
     {
