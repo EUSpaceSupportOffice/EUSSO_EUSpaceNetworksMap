@@ -48,6 +48,14 @@
       "Link": "https://reuniwatt.com/en/"
     },
     {
+       "Name": "EurA AG",
+      "Address": "Dennewartstraße 25, 52068 Aachen, Germany",
+      "Coordinates": "50.78063741175041, 6.104909339196422",
+      "Contact": "Johannes M. Schmidt",
+      "Email": "jm.schmidt@eura-ag.de",
+      "Link": "https://www.eura-ag.com/en/"
+    },
+    {
        "Name": "Political Sciences Department, University of Pisa",
       "Address": "Via Filippo Serafini, 3, 56126 Pisa PI, Italy",
       "Coordinates": "43.71678436138328, 10.399102733440834",
