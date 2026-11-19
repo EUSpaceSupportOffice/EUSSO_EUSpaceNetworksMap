@@ -2935,6 +2935,30 @@
         "Contact": "Godfrey Makokha",
         "Email": "makokha.godfrey@gmail.com",
         "Link": "https://www.ttu.ac.ke/"
+    },
+    {
+        "Name": "Technical University of Kenya",
+        "Address": "Haile Selassie Avenue Entrance on Workshop Road, Kenya",
+        "Coordinates": "-1.2910819191564191, 36.825229327127346",
+        "Contact": "Eunice Nduati",
+        "Email": "enduati@jkuat.ac.ke",
+        "Link": "https://tukenya.ac.ke/"
+    },
+    {
+        "Name": "Université d'Antananarivo",
+        "Address": "Campus Universitaire Ambohitsaina, BP 566, Antananarivo 101, Madagascar",
+        "Coordinates": "-18.9127734519188, 47.55157007514703",
+        "Contact": "Avisoatolona Andrianarivo",
+        "Email": "avisoa.andrianarivo@ird.fr",
+        "Link": "https://univ-antananarivo.mg/"
+    },
+    {
+        "Name": "Institut d'Economie Rurale",
+        "Address": "Rue Mohamed V - BP 258, Bamako, République du Mali",
+        "Coordinates": "12.644570805110938, -7.997164029078878",
+        "Contact": "Sidi Dembele",
+        "Email": "sidi_dembele@yahoo.fr",
+        "Link": "https://www.ier.ml/"
     }
     ];
 
