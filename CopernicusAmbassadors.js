@@ -2959,6 +2959,14 @@
         "Contact": "Sidi Dembele",
         "Email": "sidi_dembele@yahoo.fr",
         "Link": "https://www.ier.ml/"
+    },
+    {
+        "Name": "CNRST - Centre National de la Recherche Scientifique et Technologique",
+        "Address": "9FJW+H3X, Avenue du Capitaine Thomas Sankara, Ouagadougou, Burkina Faso",
+        "Coordinates": "12.381655156643234, -1.504765604121135",
+        "Contact": "Farid Traore",
+        "Email": "farid.traore@yahoo.fr",
+        "Link": "https://www.cnrst.bf/"
     }
     ];
 
