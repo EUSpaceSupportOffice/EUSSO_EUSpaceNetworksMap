@@ -2887,6 +2887,54 @@
         "Contact": "Dimitra Tsoutsou",
         "Email": "tsoutsou@praxinetwork.gr",
         "Link": "https://praxinetwork.gr/en/home/"
+    },
+    {
+        "Name": "Université de Parakou",
+        "Address": "KCDE Rd, Parakou, Benin",
+        "Coordinates": "9.340496563290731, 2.645300782836635",
+        "Contact": "Bignon Kouton",
+        "Email": "koutonbignonnicanor@gmail.com",
+        "Link": "https://www.univ-parakou.bj/"
+    },
+    {
+        "Name": "CNRST - Centre National de la Recherche Scientifique et Technologique",
+        "Address": "9FJW+H3X, Avenue du Capitaine Thomas Sankara, Ouagadougou, Burkina Faso",
+        "Coordinates": "12.381712825561028, -1.5045187367630841",
+        "Contact": "Farid Traore",
+        "Email": "farid.traore@yahoo.fr",
+        "Link": "https://www.cnrst.bf/"
+    },
+    {
+        "Name": "Instituto Nacional Meteorologia e Geofísica",
+        "Address": "Espargos, island of Sal, Capo Verde",
+        "Coordinates": "16.73287790059565, -22.935640477076042",
+        "Contact": "Joao Spencer",
+        "Email": "jm_spencer@yahoo.fr",
+        "Link": "https://www.inmg.gov.cv/"
+    },
+    {
+        "Name": "ERAIFT - The Regional Post-Graduate Training School on Integrated Management of Tropical Forests and Lands",
+        "Address": "Campus UNIKIN - BP 15373 - Kinshasa - Commune de Lemba - RD Congo",
+        "Coordinates": "-4.419343510863787, 15.309437868881249",
+        "Contact": "Julien Bwazani",
+        "Email": "j.bwazani@eraift-rdc.org",
+        "Link": "https://www.eraift-rdc.org/en/"
+    },
+    {
+        "Name": "CSRS - Centre Suisse de Recherches Scientifiques en Côte d’Ivoire, Université Alassane Ouattara",
+        "Address": "01 BP 1303 Abidjan 01, Adiopodoume-Km 17-Route de Dabou",
+        "Coordinates": "5.333818469758214, -4.123929665088661",
+        "Contact": "Julien Zahouli",
+        "Email": "julien.zahouli@csrs.ci",
+        "Link": "https://www.csrs.ch/fr"
+    },
+    {
+        "Name": "University Taita Taveta",
+        "Address": "P.O. Box 635-80300, Voi, Kenya",
+        "Coordinates": "-3.4152444408500835, 38.51054411598886",
+        "Contact": "Godfrey Makokha",
+        "Email": "makokha.godfrey@gmail.com",
+        "Link": "https://www.ttu.ac.ke/"
     }
     ];
 
