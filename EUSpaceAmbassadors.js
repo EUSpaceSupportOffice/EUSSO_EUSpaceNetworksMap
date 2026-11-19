@@ -72,8 +72,16 @@
       "Link": "https://www.iggi-up.org/"
     },
     {
+       "Name": "Henri Coanda Air Force Academy",
+      "Address": "Strada Mihai Viteazul 160, 500187 Brașov, Romania",
+      "Coordinates": "45.662888221618026, 25.590364655658373",
+      "Contact": "Razvan-Lucian Andronic",
+      "Email": "razvan.andronic@afahc.ro",
+      "Link": "https://www.afahc.ro/"
+    },
+    {
       "Name": "University of Luxembourg",
-      "Address": "2 Av. de l'Universite L, 4365 Esch-sur-Alzette Luxembourg",
+      "Address": "2 Av. de l'Université L, 4365 Esch-sur-Alzette Luxembourg",
       "Coordinates": "49.50426654529269, 5.949402868955214",
       "Contact": "Sajad Tabibi",
       "Email": "sajad.tabibi@uni.lu",
